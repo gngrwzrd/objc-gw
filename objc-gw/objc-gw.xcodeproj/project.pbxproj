@@ -36,6 +36,7 @@
 		07F792A81A2CC46500ACE12C /* SoundHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792A71A2CC46500ACE12C /* SoundHelper.m */; };
 		07F792AF1A2CEAE000ACE12C /* ASLLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792AC1A2CEAE000ACE12C /* ASLLog.m */; };
 		07F792B01A2CEAE000ACE12C /* ASLLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792AE1A2CEAE000ACE12C /* ASLLogManager.m */; };
+		07F792B31A2CFA0300ACE12C /* NSURL+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792B21A2CFA0300ACE12C /* NSURL+Additions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +110,8 @@
 		07F792AC1A2CEAE000ACE12C /* ASLLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASLLog.m; path = ../../ASLLog.m; sourceTree = "<group>"; };
 		07F792AD1A2CEAE000ACE12C /* ASLLogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASLLogManager.h; path = ../../ASLLogManager.h; sourceTree = "<group>"; };
 		07F792AE1A2CEAE000ACE12C /* ASLLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASLLogManager.m; path = ../../ASLLogManager.m; sourceTree = "<group>"; };
+		07F792B11A2CFA0300ACE12C /* NSURL+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+Additions.h"; path = "../../NSURL+Additions.h"; sourceTree = "<group>"; };
+		07F792B21A2CFA0300ACE12C /* NSURL+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Additions.m"; path = "../../NSURL+Additions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,12 +147,12 @@
 		07F7923F1A2C41A700ACE12C /* objc-gw */ = {
 			isa = PBXGroup;
 			children = (
+				07F792471A2C41C200ACE12C /* AccessibilityHelper.h */,
+				07F792481A2C41C200ACE12C /* AccessibilityHelper.m */,
 				07F792AB1A2CEAE000ACE12C /* ASLLog.h */,
 				07F792AC1A2CEAE000ACE12C /* ASLLog.m */,
 				07F792AD1A2CEAE000ACE12C /* ASLLogManager.h */,
 				07F792AE1A2CEAE000ACE12C /* ASLLogManager.m */,
-				07F792471A2C41C200ACE12C /* AccessibilityHelper.h */,
-				07F792481A2C41C200ACE12C /* AccessibilityHelper.m */,
 				07F7924A1A2C41DF00ACE12C /* CarbonEventManager.h */,
 				07F7924B1A2C41DF00ACE12C /* CarbonEventManager.m */,
 				07F792911A2CBD5700ACE12C /* CliProxy.h */,
@@ -176,6 +179,8 @@
 				07F792711A2C482100ACE12C /* NSScreen+Additions.m */,
 				07F792731A2C484600ACE12C /* NSString+Additions.h */,
 				07F792741A2C484600ACE12C /* NSString+Additions.m */,
+				07F792B11A2CFA0300ACE12C /* NSURL+Additions.h */,
+				07F792B21A2CFA0300ACE12C /* NSURL+Additions.m */,
 				07F792761A2C487800ACE12C /* NSURLRequest+Additions.h */,
 				07F792771A2C487800ACE12C /* NSURLRequest+Additions.m */,
 				07F792821A2C493900ACE12C /* NSView+AutoLayout.h */,
@@ -286,6 +291,7 @@
 				07F7929F1A2CC02A00ACE12C /* GDB.c in Sources */,
 				07F792B01A2CEAE000ACE12C /* ASLLogManager.m in Sources */,
 				07F7926C1A2C46A100ACE12C /* QuartzEventTap.m in Sources */,
+				07F792B31A2CFA0300ACE12C /* NSURL+Additions.m in Sources */,
 				07F792781A2C487800ACE12C /* NSURLRequest+Additions.m in Sources */,
 				07F7926F1A2C475500ACE12C /* NSObject+Additions.m in Sources */,
 				07F792411A2C41A700ACE12C /* main.m in Sources */,
