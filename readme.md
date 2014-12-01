@@ -1,1 +1,1 @@
-A smorgasbord of Objective-C. Some of it is up-to-date with ARC, some of it not.
+A smorgasbord of Objective-C. Some of it is up-to-date with ARC, some of it not. I typically use this as a submodule and include source directly, which is why only some of it is up to date / maintained.
