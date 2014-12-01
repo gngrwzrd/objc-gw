@@ -37,6 +37,8 @@
 		07F792AF1A2CEAE000ACE12C /* ASLLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792AC1A2CEAE000ACE12C /* ASLLog.m */; };
 		07F792B01A2CEAE000ACE12C /* ASLLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792AE1A2CEAE000ACE12C /* ASLLogManager.m */; };
 		07F792B31A2CFA0300ACE12C /* NSURL+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792B21A2CFA0300ACE12C /* NSURL+Additions.m */; };
+		07F792D61A2D019F00ACE12C /* NSKeyedArchiver+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792D51A2D019F00ACE12C /* NSKeyedArchiver+Additions.m */; };
+		07F792DA1A2D01FA00ACE12C /* NSKeyedUnarchiver+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792D91A2D01FA00ACE12C /* NSKeyedUnarchiver+Additions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -112,6 +114,11 @@
 		07F792AE1A2CEAE000ACE12C /* ASLLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASLLogManager.m; path = ../../ASLLogManager.m; sourceTree = "<group>"; };
 		07F792B11A2CFA0300ACE12C /* NSURL+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+Additions.h"; path = "../../NSURL+Additions.h"; sourceTree = "<group>"; };
 		07F792B21A2CFA0300ACE12C /* NSURL+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Additions.m"; path = "../../NSURL+Additions.m"; sourceTree = "<group>"; };
+		07F792D41A2D019F00ACE12C /* NSKeyedArchiver+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSKeyedArchiver+Additions.h"; path = "../../NSKeyedArchiver+Additions.h"; sourceTree = "<group>"; };
+		07F792D51A2D019F00ACE12C /* NSKeyedArchiver+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSKeyedArchiver+Additions.m"; path = "../../NSKeyedArchiver+Additions.m"; sourceTree = "<group>"; };
+		07F792D71A2D01B600ACE12C /* NSCodingKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NSCodingKeys.h; path = ../../NSCodingKeys.h; sourceTree = "<group>"; };
+		07F792D81A2D01FA00ACE12C /* NSKeyedUnarchiver+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSKeyedUnarchiver+Additions.h"; path = "../../NSKeyedUnarchiver+Additions.h"; sourceTree = "<group>"; };
+		07F792D91A2D01FA00ACE12C /* NSKeyedUnarchiver+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSKeyedUnarchiver+Additions.m"; path = "../../NSKeyedUnarchiver+Additions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +175,13 @@
 				07F792581A2C443500ACE12C /* KqueueWatcher.h */,
 				07F792591A2C443500ACE12C /* KqueueWatcher.m */,
 				07F792401A2C41A700ACE12C /* main.m */,
+				07F792D71A2D01B600ACE12C /* NSCodingKeys.h */,
 				07F7927F1A2C48F000ACE12C /* NSFileManager+Additions.h */,
 				07F792801A2C48F000ACE12C /* NSFileManager+Additions.m */,
+				07F792D41A2D019F00ACE12C /* NSKeyedArchiver+Additions.h */,
+				07F792D51A2D019F00ACE12C /* NSKeyedArchiver+Additions.m */,
+				07F792D81A2D01FA00ACE12C /* NSKeyedUnarchiver+Additions.h */,
+				07F792D91A2D01FA00ACE12C /* NSKeyedUnarchiver+Additions.m */,
 				07F792A91A2CC6BD00ACE12C /* NSLog+Geom.h */,
 				07F792611A2C460100ACE12C /* NSMenu+Additions.h */,
 				07F792621A2C460100ACE12C /* NSMenu+Additions.m */,
@@ -288,10 +300,12 @@
 				07F792631A2C460100ACE12C /* NSMenu+Additions.m in Sources */,
 				07F792A21A2CC09300ACE12C /* ULimit.m in Sources */,
 				07F792601A2C456F00ACE12C /* DiskCache.m in Sources */,
+				07F792D61A2D019F00ACE12C /* NSKeyedArchiver+Additions.m in Sources */,
 				07F7929F1A2CC02A00ACE12C /* GDB.c in Sources */,
 				07F792B01A2CEAE000ACE12C /* ASLLogManager.m in Sources */,
 				07F7926C1A2C46A100ACE12C /* QuartzEventTap.m in Sources */,
 				07F792B31A2CFA0300ACE12C /* NSURL+Additions.m in Sources */,
+				07F792DA1A2D01FA00ACE12C /* NSKeyedUnarchiver+Additions.m in Sources */,
 				07F792781A2C487800ACE12C /* NSURLRequest+Additions.m in Sources */,
 				07F7926F1A2C475500ACE12C /* NSObject+Additions.m in Sources */,
 				07F792411A2C41A700ACE12C /* main.m in Sources */,
