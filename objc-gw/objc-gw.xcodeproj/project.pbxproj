@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07F792411A2C41A700ACE12C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792401A2C41A700ACE12C /* main.m */; };
+		07F792491A2C41C200ACE12C /* AccessibilityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792481A2C41C200ACE12C /* AccessibilityHelper.m */; };
+		07F7924C1A2C41DF00ACE12C /* CarbonEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F7924B1A2C41DF00ACE12C /* CarbonEventManager.m */; };
+		07F7924E1A2C41EE00ACE12C /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F7924D1A2C41EE00ACE12C /* Carbon.framework */; };
+		07F792501A2C41F200ACE12C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F7924F1A2C41F200ACE12C /* Cocoa.framework */; };
+		07F7925A1A2C443500ACE12C /* KqueueWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792591A2C443500ACE12C /* KqueueWatcher.m */; };
+		07F792601A2C456F00ACE12C /* DiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F7925F1A2C456F00ACE12C /* DiskCache.m */; };
+		07F792631A2C460100ACE12C /* NSMenu+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792621A2C460100ACE12C /* NSMenu+Additions.m */; };
+		07F792661A2C464700ACE12C /* NSWorkspace+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792651A2C464700ACE12C /* NSWorkspace+Additions.m */; };
+		07F792691A2C467D00ACE12C /* QuartzDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792681A2C467D00ACE12C /* QuartzDisplay.m */; };
+		07F7926C1A2C46A100ACE12C /* QuartzEventTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F7926B1A2C46A100ACE12C /* QuartzEventTap.m */; };
+		07F7926F1A2C475500ACE12C /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F7926E1A2C475500ACE12C /* NSObject+Additions.m */; };
+		07F792721A2C482100ACE12C /* NSScreen+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792711A2C482100ACE12C /* NSScreen+Additions.m */; };
+		07F792751A2C484600ACE12C /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792741A2C484600ACE12C /* NSString+Additions.m */; };
+		07F792781A2C487800ACE12C /* NSURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792771A2C487800ACE12C /* NSURLRequest+Additions.m */; };
+		07F792811A2C48F000ACE12C /* NSFileManager+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792801A2C48F000ACE12C /* NSFileManager+Additions.m */; };
+		07F792841A2C493900ACE12C /* NSView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792831A2C493900ACE12C /* NSView+AutoLayout.m */; };
+		07F792871A2C497000ACE12C /* QuartzKeyEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792861A2C497000ACE12C /* QuartzKeyEventManager.m */; };
+		07F7928A1A2C499E00ACE12C /* PipedTaskRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792891A2C499E00ACE12C /* PipedTaskRunner.m */; };
+		07F792951A2CBD5700ACE12C /* CliProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792921A2CBD5700ACE12C /* CliProxy.m */; };
+		07F792961A2CBD5700ACE12C /* CliProxyConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792941A2CBD5700ACE12C /* CliProxyConnector.m */; };
+		07F792991A2CBF5D00ACE12C /* NSView+Autoresizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792981A2CBF5D00ACE12C /* NSView+Autoresizing.m */; };
+		07F7929C1A2CBFD800ACE12C /* OSType.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F7929B1A2CBFD800ACE12C /* OSType.m */; };
+		07F7929F1A2CC02A00ACE12C /* GDB.c in Sources */ = {isa = PBXBuildFile; fileRef = 07F7929D1A2CC02A00ACE12C /* GDB.c */; };
+		07F792A21A2CC09300ACE12C /* ULimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792A11A2CC09300ACE12C /* ULimit.m */; };
+		07F792A51A2CC19600ACE12C /* CrashFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792A41A2CC19600ACE12C /* CrashFinder.m */; };
+		07F792A81A2CC46500ACE12C /* SoundHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792A71A2CC46500ACE12C /* SoundHelper.m */; };
+		07F792AF1A2CEAE000ACE12C /* ASLLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792AC1A2CEAE000ACE12C /* ASLLog.m */; };
+		07F792B01A2CEAE000ACE12C /* ASLLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792AE1A2CEAE000ACE12C /* ASLLogManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07F7923B1A2C41A700ACE12C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		07F7923D1A2C41A700ACE12C /* objc-gw */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "objc-gw"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F792401A2C41A700ACE12C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07F792471A2C41C200ACE12C /* AccessibilityHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessibilityHelper.h; path = ../../AccessibilityHelper.h; sourceTree = "<group>"; };
+		07F792481A2C41C200ACE12C /* AccessibilityHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessibilityHelper.m; path = ../../AccessibilityHelper.m; sourceTree = "<group>"; };
+		07F7924A1A2C41DF00ACE12C /* CarbonEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarbonEventManager.h; path = ../../CarbonEventManager.h; sourceTree = "<group>"; };
+		07F7924B1A2C41DF00ACE12C /* CarbonEventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarbonEventManager.m; path = ../../CarbonEventManager.m; sourceTree = "<group>"; };
+		07F7924D1A2C41EE00ACE12C /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		07F7924F1A2C41F200ACE12C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		07F792581A2C443500ACE12C /* KqueueWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KqueueWatcher.h; path = ../../KqueueWatcher.h; sourceTree = "<group>"; };
+		07F792591A2C443500ACE12C /* KqueueWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KqueueWatcher.m; path = ../../KqueueWatcher.m; sourceTree = "<group>"; };
+		07F7925E1A2C456F00ACE12C /* DiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiskCache.h; path = ../../DiskCache.h; sourceTree = "<group>"; };
+		07F7925F1A2C456F00ACE12C /* DiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiskCache.m; path = ../../DiskCache.m; sourceTree = "<group>"; };
+		07F792611A2C460100ACE12C /* NSMenu+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMenu+Additions.h"; path = "../../NSMenu+Additions.h"; sourceTree = "<group>"; };
+		07F792621A2C460100ACE12C /* NSMenu+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMenu+Additions.m"; path = "../../NSMenu+Additions.m"; sourceTree = "<group>"; };
+		07F792641A2C464700ACE12C /* NSWorkspace+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSWorkspace+Additions.h"; path = "../../NSWorkspace+Additions.h"; sourceTree = "<group>"; };
+		07F792651A2C464700ACE12C /* NSWorkspace+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSWorkspace+Additions.m"; path = "../../NSWorkspace+Additions.m"; sourceTree = "<group>"; };
+		07F792671A2C467D00ACE12C /* QuartzDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuartzDisplay.h; path = ../../QuartzDisplay.h; sourceTree = "<group>"; };
+		07F792681A2C467D00ACE12C /* QuartzDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuartzDisplay.m; path = ../../QuartzDisplay.m; sourceTree = "<group>"; };
+		07F7926A1A2C46A100ACE12C /* QuartzEventTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuartzEventTap.h; path = ../../QuartzEventTap.h; sourceTree = "<group>"; };
+		07F7926B1A2C46A100ACE12C /* QuartzEventTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuartzEventTap.m; path = ../../QuartzEventTap.m; sourceTree = "<group>"; };
+		07F7926D1A2C475500ACE12C /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Additions.h"; path = "../../NSObject+Additions.h"; sourceTree = "<group>"; };
+		07F7926E1A2C475500ACE12C /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Additions.m"; path = "../../NSObject+Additions.m"; sourceTree = "<group>"; };
+		07F792701A2C482100ACE12C /* NSScreen+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSScreen+Additions.h"; path = "../../NSScreen+Additions.h"; sourceTree = "<group>"; };
+		07F792711A2C482100ACE12C /* NSScreen+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSScreen+Additions.m"; path = "../../NSScreen+Additions.m"; sourceTree = "<group>"; };
+		07F792731A2C484600ACE12C /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Additions.h"; path = "../../NSString+Additions.h"; sourceTree = "<group>"; };
+		07F792741A2C484600ACE12C /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Additions.m"; path = "../../NSString+Additions.m"; sourceTree = "<group>"; };
+		07F792761A2C487800ACE12C /* NSURLRequest+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+Additions.h"; path = "../../NSURLRequest+Additions.h"; sourceTree = "<group>"; };
+		07F792771A2C487800ACE12C /* NSURLRequest+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+Additions.m"; path = "../../NSURLRequest+Additions.m"; sourceTree = "<group>"; };
+		07F7927F1A2C48F000ACE12C /* NSFileManager+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+Additions.h"; path = "../../NSFileManager+Additions.h"; sourceTree = "<group>"; };
+		07F792801A2C48F000ACE12C /* NSFileManager+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+Additions.m"; path = "../../NSFileManager+Additions.m"; sourceTree = "<group>"; };
+		07F792821A2C493900ACE12C /* NSView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+AutoLayout.h"; path = "../../NSView+AutoLayout.h"; sourceTree = "<group>"; };
+		07F792831A2C493900ACE12C /* NSView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+AutoLayout.m"; path = "../../NSView+AutoLayout.m"; sourceTree = "<group>"; };
+		07F792851A2C497000ACE12C /* QuartzKeyEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuartzKeyEventManager.h; path = ../../QuartzKeyEventManager.h; sourceTree = "<group>"; };
+		07F792861A2C497000ACE12C /* QuartzKeyEventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuartzKeyEventManager.m; path = ../../QuartzKeyEventManager.m; sourceTree = "<group>"; };
+		07F792881A2C499E00ACE12C /* PipedTaskRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PipedTaskRunner.h; path = ../../PipedTaskRunner.h; sourceTree = "<group>"; };
+		07F792891A2C499E00ACE12C /* PipedTaskRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PipedTaskRunner.m; path = ../../PipedTaskRunner.m; sourceTree = "<group>"; };
+		07F792911A2CBD5700ACE12C /* CliProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CliProxy.h; path = ../../CliProxy.h; sourceTree = "<group>"; };
+		07F792921A2CBD5700ACE12C /* CliProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CliProxy.m; path = ../../CliProxy.m; sourceTree = "<group>"; };
+		07F792931A2CBD5700ACE12C /* CliProxyConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CliProxyConnector.h; path = ../../CliProxyConnector.h; sourceTree = "<group>"; };
+		07F792941A2CBD5700ACE12C /* CliProxyConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CliProxyConnector.m; path = ../../CliProxyConnector.m; sourceTree = "<group>"; };
+		07F792971A2CBF5D00ACE12C /* NSView+Autoresizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+Autoresizing.h"; path = "../../NSView+Autoresizing.h"; sourceTree = "<group>"; };
+		07F792981A2CBF5D00ACE12C /* NSView+Autoresizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+Autoresizing.m"; path = "../../NSView+Autoresizing.m"; sourceTree = "<group>"; };
+		07F7929A1A2CBFD800ACE12C /* OSType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSType.h; path = ../../OSType.h; sourceTree = "<group>"; };
+		07F7929B1A2CBFD800ACE12C /* OSType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSType.m; path = ../../OSType.m; sourceTree = "<group>"; };
+		07F7929D1A2CC02A00ACE12C /* GDB.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = GDB.c; path = ../../GDB.c; sourceTree = "<group>"; };
+		07F7929E1A2CC02A00ACE12C /* GDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDB.h; path = ../../GDB.h; sourceTree = "<group>"; };
+		07F792A01A2CC09300ACE12C /* ULimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ULimit.h; path = ../../ULimit.h; sourceTree = "<group>"; };
+		07F792A11A2CC09300ACE12C /* ULimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ULimit.m; path = ../../ULimit.m; sourceTree = "<group>"; };
+		07F792A31A2CC19600ACE12C /* CrashFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CrashFinder.h; path = ../../CrashFinder.h; sourceTree = "<group>"; };
+		07F792A41A2CC19600ACE12C /* CrashFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CrashFinder.m; path = ../../CrashFinder.m; sourceTree = "<group>"; };
+		07F792A61A2CC46500ACE12C /* SoundHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundHelper.h; path = ../../SoundHelper.h; sourceTree = "<group>"; };
+		07F792A71A2CC46500ACE12C /* SoundHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundHelper.m; path = ../../SoundHelper.m; sourceTree = "<group>"; };
+		07F792A91A2CC6BD00ACE12C /* NSLog+Geom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSLog+Geom.h"; path = "../../NSLog+Geom.h"; sourceTree = "<group>"; };
+		07F792AA1A2CC74F00ACE12C /* PragmaHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PragmaHelpers.h; path = ../../PragmaHelpers.h; sourceTree = "<group>"; };
+		07F792AB1A2CEAE000ACE12C /* ASLLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASLLog.h; path = ../../ASLLog.h; sourceTree = "<group>"; };
+		07F792AC1A2CEAE000ACE12C /* ASLLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASLLog.m; path = ../../ASLLog.m; sourceTree = "<group>"; };
+		07F792AD1A2CEAE000ACE12C /* ASLLogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASLLogManager.h; path = ../../ASLLogManager.h; sourceTree = "<group>"; };
+		07F792AE1A2CEAE000ACE12C /* ASLLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASLLogManager.m; path = ../../ASLLogManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07F7923A1A2C41A700ACE12C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F792501A2C41F200ACE12C /* Cocoa.framework in Frameworks */,
+				07F7924E1A2C41EE00ACE12C /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07F792341A2C41A700ACE12C = {
+			isa = PBXGroup;
+			children = (
+				07F792511A2C41F900ACE12C /* Frameworks */,
+				07F7923F1A2C41A700ACE12C /* objc-gw */,
+				07F7923E1A2C41A700ACE12C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07F7923E1A2C41A700ACE12C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07F7923D1A2C41A700ACE12C /* objc-gw */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07F7923F1A2C41A700ACE12C /* objc-gw */ = {
+			isa = PBXGroup;
+			children = (
+				07F792AB1A2CEAE000ACE12C /* ASLLog.h */,
+				07F792AC1A2CEAE000ACE12C /* ASLLog.m */,
+				07F792AD1A2CEAE000ACE12C /* ASLLogManager.h */,
+				07F792AE1A2CEAE000ACE12C /* ASLLogManager.m */,
+				07F792471A2C41C200ACE12C /* AccessibilityHelper.h */,
+				07F792481A2C41C200ACE12C /* AccessibilityHelper.m */,
+				07F7924A1A2C41DF00ACE12C /* CarbonEventManager.h */,
+				07F7924B1A2C41DF00ACE12C /* CarbonEventManager.m */,
+				07F792911A2CBD5700ACE12C /* CliProxy.h */,
+				07F792921A2CBD5700ACE12C /* CliProxy.m */,
+				07F792931A2CBD5700ACE12C /* CliProxyConnector.h */,
+				07F792941A2CBD5700ACE12C /* CliProxyConnector.m */,
+				07F792A31A2CC19600ACE12C /* CrashFinder.h */,
+				07F792A41A2CC19600ACE12C /* CrashFinder.m */,
+				07F7925E1A2C456F00ACE12C /* DiskCache.h */,
+				07F7925F1A2C456F00ACE12C /* DiskCache.m */,
+				07F7929D1A2CC02A00ACE12C /* GDB.c */,
+				07F7929E1A2CC02A00ACE12C /* GDB.h */,
+				07F792581A2C443500ACE12C /* KqueueWatcher.h */,
+				07F792591A2C443500ACE12C /* KqueueWatcher.m */,
+				07F792401A2C41A700ACE12C /* main.m */,
+				07F7927F1A2C48F000ACE12C /* NSFileManager+Additions.h */,
+				07F792801A2C48F000ACE12C /* NSFileManager+Additions.m */,
+				07F792A91A2CC6BD00ACE12C /* NSLog+Geom.h */,
+				07F792611A2C460100ACE12C /* NSMenu+Additions.h */,
+				07F792621A2C460100ACE12C /* NSMenu+Additions.m */,
+				07F7926D1A2C475500ACE12C /* NSObject+Additions.h */,
+				07F7926E1A2C475500ACE12C /* NSObject+Additions.m */,
+				07F792701A2C482100ACE12C /* NSScreen+Additions.h */,
+				07F792711A2C482100ACE12C /* NSScreen+Additions.m */,
+				07F792731A2C484600ACE12C /* NSString+Additions.h */,
+				07F792741A2C484600ACE12C /* NSString+Additions.m */,
+				07F792761A2C487800ACE12C /* NSURLRequest+Additions.h */,
+				07F792771A2C487800ACE12C /* NSURLRequest+Additions.m */,
+				07F792821A2C493900ACE12C /* NSView+AutoLayout.h */,
+				07F792831A2C493900ACE12C /* NSView+AutoLayout.m */,
+				07F792971A2CBF5D00ACE12C /* NSView+Autoresizing.h */,
+				07F792981A2CBF5D00ACE12C /* NSView+Autoresizing.m */,
+				07F792641A2C464700ACE12C /* NSWorkspace+Additions.h */,
+				07F792651A2C464700ACE12C /* NSWorkspace+Additions.m */,
+				07F7929A1A2CBFD800ACE12C /* OSType.h */,
+				07F7929B1A2CBFD800ACE12C /* OSType.m */,
+				07F792881A2C499E00ACE12C /* PipedTaskRunner.h */,
+				07F792891A2C499E00ACE12C /* PipedTaskRunner.m */,
+				07F792AA1A2CC74F00ACE12C /* PragmaHelpers.h */,
+				07F792671A2C467D00ACE12C /* QuartzDisplay.h */,
+				07F792681A2C467D00ACE12C /* QuartzDisplay.m */,
+				07F7926A1A2C46A100ACE12C /* QuartzEventTap.h */,
+				07F7926B1A2C46A100ACE12C /* QuartzEventTap.m */,
+				07F792851A2C497000ACE12C /* QuartzKeyEventManager.h */,
+				07F792861A2C497000ACE12C /* QuartzKeyEventManager.m */,
+				07F792A61A2CC46500ACE12C /* SoundHelper.h */,
+				07F792A71A2CC46500ACE12C /* SoundHelper.m */,
+				07F792A01A2CC09300ACE12C /* ULimit.h */,
+				07F792A11A2CC09300ACE12C /* ULimit.m */,
+			);
+			path = "objc-gw";
+			sourceTree = "<group>";
+		};
+		07F792511A2C41F900ACE12C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07F7924D1A2C41EE00ACE12C /* Carbon.framework */,
+				07F7924F1A2C41F200ACE12C /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07F7923C1A2C41A700ACE12C /* objc-gw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07F792441A2C41A700ACE12C /* Build configuration list for PBXNativeTarget "objc-gw" */;
+			buildPhases = (
+				07F792391A2C41A700ACE12C /* Sources */,
+				07F7923A1A2C41A700ACE12C /* Frameworks */,
+				07F7923B1A2C41A700ACE12C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "objc-gw";
+			productName = "objc-gw";
+			productReference = 07F7923D1A2C41A700ACE12C /* objc-gw */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07F792351A2C41A700ACE12C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = gngrwzrd;
+				TargetAttributes = {
+					07F7923C1A2C41A700ACE12C = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 07F792381A2C41A700ACE12C /* Build configuration list for PBXProject "objc-gw" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 07F792341A2C41A700ACE12C;
+			productRefGroup = 07F7923E1A2C41A700ACE12C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07F7923C1A2C41A700ACE12C /* objc-gw */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07F792391A2C41A700ACE12C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F792811A2C48F000ACE12C /* NSFileManager+Additions.m in Sources */,
+				07F792961A2CBD5700ACE12C /* CliProxyConnector.m in Sources */,
+				07F792661A2C464700ACE12C /* NSWorkspace+Additions.m in Sources */,
+				07F792751A2C484600ACE12C /* NSString+Additions.m in Sources */,
+				07F792951A2CBD5700ACE12C /* CliProxy.m in Sources */,
+				07F7928A1A2C499E00ACE12C /* PipedTaskRunner.m in Sources */,
+				07F7925A1A2C443500ACE12C /* KqueueWatcher.m in Sources */,
+				07F792AF1A2CEAE000ACE12C /* ASLLog.m in Sources */,
+				07F7929C1A2CBFD800ACE12C /* OSType.m in Sources */,
+				07F792991A2CBF5D00ACE12C /* NSView+Autoresizing.m in Sources */,
+				07F7924C1A2C41DF00ACE12C /* CarbonEventManager.m in Sources */,
+				07F792491A2C41C200ACE12C /* AccessibilityHelper.m in Sources */,
+				07F792631A2C460100ACE12C /* NSMenu+Additions.m in Sources */,
+				07F792A21A2CC09300ACE12C /* ULimit.m in Sources */,
+				07F792601A2C456F00ACE12C /* DiskCache.m in Sources */,
+				07F7929F1A2CC02A00ACE12C /* GDB.c in Sources */,
+				07F792B01A2CEAE000ACE12C /* ASLLogManager.m in Sources */,
+				07F7926C1A2C46A100ACE12C /* QuartzEventTap.m in Sources */,
+				07F792781A2C487800ACE12C /* NSURLRequest+Additions.m in Sources */,
+				07F7926F1A2C475500ACE12C /* NSObject+Additions.m in Sources */,
+				07F792411A2C41A700ACE12C /* main.m in Sources */,
+				07F792841A2C493900ACE12C /* NSView+AutoLayout.m in Sources */,
+				07F792691A2C467D00ACE12C /* QuartzDisplay.m in Sources */,
+				07F792A81A2CC46500ACE12C /* SoundHelper.m in Sources */,
+				07F792721A2C482100ACE12C /* NSScreen+Additions.m in Sources */,
+				07F792A51A2CC19600ACE12C /* CrashFinder.m in Sources */,
+				07F792871A2C497000ACE12C /* QuartzKeyEventManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		07F792421A2C41A700ACE12C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		07F792431A2C41A700ACE12C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		07F792451A2C41A700ACE12C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		07F792461A2C41A700ACE12C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07F792381A2C41A700ACE12C /* Build configuration list for PBXProject "objc-gw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07F792421A2C41A700ACE12C /* Debug */,
+				07F792431A2C41A700ACE12C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07F792441A2C41A700ACE12C /* Build configuration list for PBXNativeTarget "objc-gw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07F792451A2C41A700ACE12C /* Debug */,
+				07F792461A2C41A700ACE12C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07F792351A2C41A700ACE12C /* Project object */;
+}

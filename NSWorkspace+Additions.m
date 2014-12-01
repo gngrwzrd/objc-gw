@@ -3,7 +3,7 @@
 
 @implementation NSWorkspace (Additions)
 
-- (void) bringCurrentApplicationToFront {
+- (void) bringApplicationToFront {
 	[self launchApplication:[[NSBundle mainBundle] bundlePath]];
 }
 

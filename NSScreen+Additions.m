@@ -2,6 +2,7 @@
 #import "NSScreen+Additions.h"
 
 @implementation NSScreen (Additions)
+
 + (NSScreen *) screenContainingPoint:(NSPoint) point; {
 	NSArray * screens = [NSScreen screens];
 	for(NSScreen * screen in screens) {
@@ -13,7 +14,7 @@
 	return NULL;
 }
 
-+ (NSScreen *) screenContainingRect:(NSRect) rect {
++ (NSScreen *) screenContainingRect:(NSRect) rect; {
 	NSArray * screens = [NSScreen screens];
 	for(NSScreen * screen in screens) {
 		NSRect visibleFrame = screen.visibleFrame;
@@ -24,7 +25,7 @@
 	return NULL;
 }
 
-- (NSSize) pixelDimensions {
+- (NSSize) pixelDimensions; {
 	NSValue * sizeValue = [[self deviceDescription] objectForKey:@"NSDeviceSize"];
 	return [sizeValue sizeValue];
 }

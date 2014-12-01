@@ -43,4 +43,10 @@ CGEventRef QuartzEventTapCallbackFunction(CGEventTapProxy proxy, CGEventType typ
 	self.isRunning = FALSE;
 }
 
+- (void) dealloc {
+	[self stop];
+	CFRelease(self.eventTap);
+	CFRelease(self.runloopSource);
+}
+
 @end

@@ -12,7 +12,6 @@
 @end
 
 typedef void (^QuartzEventManagerRestoreTargetAction)(QuartzKeyEvent * event);
-
 @interface QuartzKeyEventManager : NSObject
 + (QuartzKeyEventManager *) sharedManager;
 - (void) restoreTargetActions:(QuartzEventManagerRestoreTargetAction) callback;
