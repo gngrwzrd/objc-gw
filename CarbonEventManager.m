@@ -122,6 +122,17 @@ static OSStatus carbonEventHotKeyHandler(EventHandlerCallRef nextHandler, EventR
 	}
 }
 
+- (NSArray *) allKeyEvents; {
+	NSMutableArray * keyEvents = [NSMutableArray array];
+	for(NSNumber * key in self.keyEvents) {
+		CarbonKeyEvent * keyEvent = self.keyEvents[key];
+		if(![keyEvents containsObject:keyEvents]) {
+			[keyEvents addObject:keyEvent];
+		}
+	}
+	return keyEvents;
+}
+
 - (void) addCarbonKeyEvent:(CarbonKeyEvent *) keyEvent; {
 	NSNumber * key = [self keyForKeyCode:keyEvent.keyCode modifierFlags:keyEvent.modifierFlags];
 	if(self.keyEvents[key]) {
@@ -180,11 +191,10 @@ static OSStatus carbonEventHotKeyHandler(EventHandlerCallRef nextHandler, EventR
 }
 
 - (void) removeAllEvents {
-	for(NSNumber * key in self.keyEvents) {
+	NSMutableDictionary * keyEventsCopy = [self.keyEvents copy];
+	for(NSNumber * key in keyEventsCopy) {
 		CarbonKeyEvent * keyEvent = self.keyEvents[key];
 		[self removeCarbonKeyEvent:keyEvent];
-		[self.keyEvents removeObjectForKey:key];
-		[self.keyEvents removeObjectForKey:[self hotKeyIdFromKeyEvent:keyEvent]];
 	}
 	[self saveToDefaults];
 }

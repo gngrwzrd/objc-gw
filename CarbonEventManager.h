@@ -20,6 +20,7 @@ typedef void (^CarbonEventManagerRestoreTargetAction)(CarbonKeyEvent * event);
 + (CarbonEventManager *) sharedManager;
 + (NSUInteger) carbonToCocoaModifierFlags:(NSUInteger) carbonFlags;
 + (NSUInteger) cocoaToCarbonModifierFlags:(NSUInteger) cocoaFlags;
+- (NSArray *) allKeyEvents;
 - (void) restoreTargetActions:(CarbonEventManagerRestoreTargetAction) restoreHandler;
 - (void) addCarbonKeyEvent:(CarbonKeyEvent *) keyEvent;
 - (void) removeCarbonKeyEvent:(CarbonKeyEvent *) keyEvent;
