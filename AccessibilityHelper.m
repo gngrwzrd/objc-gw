@@ -133,6 +133,10 @@ static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef
 
 #pragma mark AccessibilityElement Implementation
 
+@interface AccessibilityElement ()
+@property NSMutableArray * observers;
+@end
+
 @implementation AccessibilityElement
 
 + (AccessibilityElement *) elementWithAXUIElementRef:(AXUIElementRef) elementRef {
@@ -143,6 +147,7 @@ static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef
 - (id) initWithAXUIElementRef:(AXUIElementRef) elementRef; {
 	self = [super init];
 	CFRetain(elementRef);
+	self.observers = [NSMutableArray array];
 	self.element = elementRef;
 	return self;
 }
@@ -219,14 +224,24 @@ static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef
 	observer.observer = ref;
 	observer.element = self;
 	AXObserverAddNotification(ref,self.element,(__bridge CFStringRef)observer.notification,(__bridge void *)observer);
+	[self.observers addObject:observer];
 }
 
 - (void) removeObserver:(AccessibilityObserver *) observer; {
+	[self.observers removeObject:observer];
 	CFRunLoopRemoveSource([[NSRunLoop mainRunLoop] getCFRunLoop],AXObserverGetRunLoopSource(observer.observer),(CFStringRef)NSDefaultRunLoopMode);
 	AXObserverRemoveNotification(observer.observer,self.element,(__bridge CFStringRef)observer.notification);
 }
 
+- (void) removeAllObservers {
+	NSArray * observersCopy = [self.observers copy];
+	for(AccessibilityObserver * observer in observersCopy) {
+		[self removeObserver:observer];
+	}
+}
+
 - (void) dealloc {
+	[self removeAllObservers];
 	CFRelease(self.element);
 }
 
