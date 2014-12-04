@@ -428,6 +428,7 @@
 				07F792461A2C41A700ACE12C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
