@@ -217,6 +217,31 @@ static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef
 	return (__bridge  NSString *)value;
 }
 
+- (void) setNSValue:(NSValue *) value forAttribute:(NSString *) attribute; {
+	const char * objcType = [value objCType];
+	if(strcmp(objcType, @encode(NSPoint)) == 0) {
+		NSPoint point = value.pointValue;
+		AXValueRef pointValue = AXValueCreate(kAXValueCGPointType,&point);
+		AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,pointValue);
+	} else if(strcmp(objcType,@encode(NSSize)) == 0) {
+		NSSize size = value.sizeValue;
+		AXValueRef sizeValue = AXValueCreate(kAXValueCGSizeType,&size);
+		AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,sizeValue);
+	} else if(strcmp(objcType,@encode(NSRect)) == 0) {
+		NSRect rect = value.rectValue;
+		AXValueRef rectValue = AXValueCreate(kAXValueCGSizeType,&rect);
+		AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,rectValue);
+	} else if(strcmp(objcType,@encode(NSRange)) == 0) {
+		NSRange range = value.rangeValue;
+		AXValueRef rangeValue = AXValueCreate(kAXValueCGSizeType,&range);
+		AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,rangeValue);
+	}
+}
+
+- (void) setStringValue:(NSString *) value forAttribute:(NSString *) attribute; {
+	AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,(__bridge CFTypeRef)value);
+}
+
 - (void) addObserver:(AccessibilityObserver *) observer; {
 	AXObserverRef ref;
 	AXObserverCreate([self pid],AccessibilityObserverCallback,&ref);
