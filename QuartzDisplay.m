@@ -12,6 +12,24 @@
 	return displayCount;
 }
 
++ (NSArray *) displays {
+	NSMutableArray * quartzDisplays = [NSMutableArray array];
+	CGDirectDisplayID displays[kMaxDisplays];
+	uint32_t displayCount = kMaxDisplays;
+	CGGetActiveDisplayList(kMaxDisplays,displays,&displayCount);
+	for(NSUInteger i = 0; i<kMaxDisplays; i++) {
+		QuartzDisplay * display = [[QuartzDisplay alloc] initWithCGDirectDisplayId:displays[i]];
+		[quartzDisplays addObject:display];
+	}
+	return quartzDisplays;
+}
+
+- (id) initWithCGDirectDisplayId:(CGDirectDisplayID) directDisplayId {
+	self = [super init];
+	self.displayId = directDisplayId;
+	return self;
+}
+
 - (id) initWithPoint:(NSPoint) point; {
 	self = [super init];
 	CGPoint tp;
@@ -56,6 +74,10 @@
 	CGFloat w = (CGFloat)CGDisplayPixelsWide(self.displayId);
 	CGFloat h = (CGFloat)CGDisplayPixelsHigh(self.displayId);
 	return NSMakeSize(w,h);
+}
+
+- (NSRect) bounds {
+	return CGDisplayBounds(self.displayId);
 }
 
 - (NSScreen *) screen {
