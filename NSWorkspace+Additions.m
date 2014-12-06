@@ -7,6 +7,13 @@
 	[self launchApplication:[[NSBundle mainBundle] bundlePath]];
 }
 
+- (void) bringApplicationToFrontIfInBackground; {
+	NSRunningApplication * runningApplication = [[NSWorkspace sharedWorkspace] frontmostApplication];
+	if(![[NSBundle mainBundle].bundleIdentifier isEqualToString:runningApplication.bundleIdentifier]) {
+		[self bringApplicationToFront];
+	}
+}
+
 - (void) uninstallStartupLaunchdItem:(NSURL *) plistURL; {
 	NSFileManager * fm = [NSFileManager defaultManager];
 	NSString * fileName = [plistURL lastPathComponent];

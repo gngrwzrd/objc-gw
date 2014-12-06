@@ -25,6 +25,7 @@ typedef void (^AccessibilityNotificationCallback)(AccessibilityObserver * observ
 - (void) setStringValue:(NSString *) value forAttribute:(NSString *) attribute;
 - (void) addObserver:(AccessibilityObserver *) observer;
 - (void) removeObserver:(AccessibilityObserver *) observer;
+- (void) removeAllObservers;
 @end
 
 @interface AccessibilityObserver : NSObject

@@ -4,6 +4,7 @@
 @interface NSWorkspace (Additions)
 
 - (void) bringApplicationToFront;
+- (void) bringApplicationToFrontIfInBackground;
 - (void) installStartupLaunchdItem:(NSURL *) plistURL;
 - (void) uninstallStartupLaunchdItem:(NSURL *) plistURL;
 - (BOOL) isStartupItemInstalled:(NSURL *) plistURL;
