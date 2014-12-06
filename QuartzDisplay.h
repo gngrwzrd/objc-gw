@@ -7,6 +7,10 @@
 - (id) initWithPoint:(NSPoint) point;
 - (id) initWithRect:(NSRect) rect;
 - (BOOL) isEqualToDisplay:(QuartzDisplay *) display;
+- (NSString *) serialNumber;
 - (NSSize) pixelSize;
 - (NSScreen *) screen;
+- (NSString *) vendorNumber;
+- (NSString *) unitNumber;
+- (NSString *) serialAndVendorAndUnit;
 @end

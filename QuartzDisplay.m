@@ -72,6 +72,25 @@
 	return sc;
 }
 
+- (NSString *) serialNumber; {
+	uint32_t serial = CGDisplaySerialNumber(self.displayId);
+	return [NSString stringWithFormat:@"%u",serial];
+}
+
+- (NSString *) vendorNumber {
+	uint32_t vendor = CGDisplayVendorNumber(self.displayId);
+	return [NSString stringWithFormat:@"%u",vendor];
+}
+
+- (NSString *) unitNumber {
+	uint32_t unit = CGDisplayUnitNumber(self.displayId);
+	return [NSString stringWithFormat:@"%u",unit];
+}
+
+- (NSString *) serialAndVendorAndUnit {
+	return [NSString stringWithFormat:@"%@_%@_%@",self.serialNumber,self.vendorNumber,self.unitNumber];
+}
+
 - (BOOL) isEqualToDisplay:(QuartzDisplay *) display; {
 	return self.displayId == display.displayId;
 }
