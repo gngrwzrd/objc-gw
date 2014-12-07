@@ -23,6 +23,7 @@ typedef void (^CarbonEventManagerRestoreTargetAction)(CarbonKeyEvent * event);
 - (NSArray *) allKeyEvents;
 - (void) restoreTargetActions:(CarbonEventManagerRestoreTargetAction) restoreHandler;
 - (void) addCarbonKeyEvent:(CarbonKeyEvent *) keyEvent;
+- (void) addCarbonKeyEventsInArray:(NSArray *) array;
 - (void) removeCarbonKeyEvent:(CarbonKeyEvent *) keyEvent;
 - (void) removeCarbonKeyEventWithKeyCode:(NSUInteger) keyCode modifierFlags:(NSUInteger) modifierFlags;
 - (BOOL) hasCarbonKeyEvent:(CarbonKeyEvent *) keyEvent;

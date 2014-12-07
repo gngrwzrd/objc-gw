@@ -157,6 +157,12 @@ static OSStatus carbonEventHotKeyHandler(EventHandlerCallRef nextHandler, EventR
 	[self saveToDefaults];
 }
 
+- (void) addCarbonKeyEventsInArray:(NSArray *) array; {
+	for(CarbonKeyEvent * carbonKeyEvent in array) {
+		[self addCarbonKeyEvent:carbonKeyEvent];
+	}
+}
+
 - (void) removeCarbonKeyEvent:(CarbonKeyEvent *) keyEvent; {
 	NSNumber * key = [self keyForKeyCode:keyEvent.keyCode modifierFlags:keyEvent.modifierFlags];
 	if(self.keyEvents[key]) {
@@ -231,7 +237,11 @@ static OSStatus carbonEventHotKeyHandler(EventHandlerCallRef nextHandler, EventR
 }
 
 - (void) invoke {
-	[self.target performSelectorOnMainThread:self.action withObject:self waitUntilDone:FALSE];
+	if(!self.target) {
+		NSLog(@"keyCode: %lu, withModifiers:%lu invoked but no target/action is available.",self.keyCode,self.modifierFlags);
+	} else {
+		[self.target performSelectorOnMainThread:self.action withObject:self waitUntilDone:FALSE];
+	}
 }
 
 - (void) setTarget:(NSObject *) target action:(SEL) action; {
