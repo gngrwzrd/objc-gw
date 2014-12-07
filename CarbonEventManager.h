@@ -26,7 +26,7 @@ typedef void (^CarbonEventManagerRestoreTargetAction)(CarbonKeyEvent * event);
 - (void) removeCarbonKeyEvent:(CarbonKeyEvent *) keyEvent;
 - (void) removeCarbonKeyEventWithKeyCode:(NSUInteger) keyCode modifierFlags:(NSUInteger) modifierFlags;
 - (BOOL) hasCarbonKeyEvent:(CarbonKeyEvent *) keyEvent;
-- (BOOL) hasKeyCode:(NSUInteger) keyCode modifierFlags:(NSUInteger) modifierFlags;
+- (BOOL) hasCarbonKeyEventWithKeyCode:(NSUInteger) keyCode modifierFlags:(NSUInteger) modifierFlags;
 - (void) removeAllEvents;
 - (void) saveToDefaults;
 - (void) restoreFromDefaults;
