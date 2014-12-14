@@ -22,4 +22,22 @@
 	}
 }
 
+- (void) removeItemsWithTagsInRange:(NSRange) range; {
+	NSArray * items = self.itemArray;
+	for(NSMenuItem * item in items) {
+		if(item.tag >= range.location && item.tag < range.location+range.length) {
+			[self removeItem:item];
+		}
+	}
+}
+
+- (void) removeItemsWithTag:(NSUInteger) tag; {
+	NSArray * items = self.itemArray;
+	for(NSMenuItem * item in items) {
+		if(item.tag == tag) {
+			[self removeItem:item];
+		}
+	}
+}
+
 @end
