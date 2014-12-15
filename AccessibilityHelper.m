@@ -59,18 +59,19 @@ extern Boolean AXIsProcessTrustedWithOptions(CFDictionaryRef options) __attribut
 	AXUIElementRef sys = AXUIElementCreateSystemWide();
 	int result = AXUIElementCopyAttributeValue(sys,(CFStringRef)kAXFocusedApplicationAttribute,(CFTypeRef *)&res);
 	if(result != kAXErrorSuccess) {
+		CFRelease(sys);
 		[self logResultCode:result withMessage:@"can't copy attribute kAXFocusedApplicationAttribute"];
 		return nil;
 	}
-	CFRelease(sys);
 	AccessibilityElement * element = [AccessibilityElement elementWithAXUIElementRef:(AXUIElementRef)res];
+	CFRelease(sys);
 	return element;
 }
 
 + (AccessibilityElement *) applicationElementFromPid:(pid_t) pid; {
 	AXUIElementRef ref = AXUIElementCreateApplication(pid);
 	AccessibilityElement * element = [AccessibilityElement elementWithAXUIElementRef:ref];
-	CFRelease((CFTypeRef)ref);
+	CFRelease(ref);
 	return element;
 }
 
@@ -79,13 +80,15 @@ extern Boolean AXIsProcessTrustedWithOptions(CFDictionaryRef options) __attribut
 	if(!application) {
 		return nil;
 	}
-	CFTypeRef res = NULL;
+	AXUIElementRef res = NULL;
 	int result = AXUIElementCopyAttributeValue(application.element,kAXFocusedWindowAttribute,(CFTypeRef *)&res);
 	if(result != kAXErrorSuccess) {
+		CFRelease(res);
 		[self logResultCode:result withMessage:@"can't copy attribute NSAccessibilityFocusedWindowAttribute"];
 		return nil;
 	}
-	AccessibilityElement * element = [AccessibilityElement elementWithAXUIElementRef:(AXUIElementRef)res];
+	AccessibilityElement * element = [AccessibilityElement elementWithAXUIElementRef:res];
+	CFRelease(res);
 	return element;
 }
 
@@ -107,23 +110,27 @@ extern Boolean AXIsProcessTrustedWithOptions(CFDictionaryRef options) __attribut
 
 @interface AccessibilityObserver ()
 @property AXObserverRef observer;
-@property AccessibilityElement * element;
+@property (weak) AccessibilityElement * element;
 @end
 
 #pragma mark AccessibilityObserver Implementation
 
 @implementation AccessibilityObserver
+
 + (instancetype) observerForNotification:(NSString *) notification withCallback:(AccessibilityNotificationCallback) callback; {
 	AccessibilityObserver * observer = [[AccessibilityObserver alloc] init];
 	observer.notification = notification;
 	observer.callback = callback;
 	return observer;
 }
+
 - (void) dealloc {
 	CFRunLoopRemoveSource([[NSRunLoop mainRunLoop] getCFRunLoop],AXObserverGetRunLoopSource(self.observer),(CFStringRef)NSDefaultRunLoopMode);
 	AXObserverRemoveNotification(self.observer,self.element.element,(__bridge CFStringRef)self.notification);
+	CFRelease(self.observer);
 	self.element = nil;
 }
+
 @end
 
 static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef notification, void * userInfo) {
@@ -165,8 +172,8 @@ static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef
 }
 
 - (AccessibilityElement *) accessibilityElementForAttribute:(NSString *) attribute; {
-	CFTypeRef value = NULL;
-	int resc = AXUIElementCopyAttributeValue((AXUIElementRef)self.element,(__bridge CFStringRef)attribute,&value);
+	AXUIElementRef value = NULL;
+	int resc = AXUIElementCopyAttributeValue((AXUIElementRef)self.element,(__bridge CFStringRef)attribute,(CFTypeRef *)&value);
 	if(resc != kAXErrorSuccess) {
 		return nil;
 	}
@@ -214,7 +221,8 @@ static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef
 	if(resc != kAXErrorSuccess) {
 		return nil;
 	}
-	return (__bridge  NSString *)value;
+	NSString * nsvalue = CFBridgingRelease(value);
+	return nsvalue;
 }
 
 - (void) setNSValue:(NSValue *) value forAttribute:(NSString *) attribute; {
@@ -223,18 +231,22 @@ static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef
 		NSPoint point = value.pointValue;
 		AXValueRef pointValue = AXValueCreate(kAXValueCGPointType,&point);
 		AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,pointValue);
+		CFRelease(pointValue);
 	} else if(strcmp(objcType,@encode(NSSize)) == 0) {
 		NSSize size = value.sizeValue;
 		AXValueRef sizeValue = AXValueCreate(kAXValueCGSizeType,&size);
 		AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,sizeValue);
+		CFRelease(sizeValue);
 	} else if(strcmp(objcType,@encode(NSRect)) == 0) {
 		NSRect rect = value.rectValue;
 		AXValueRef rectValue = AXValueCreate(kAXValueCGSizeType,&rect);
 		AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,rectValue);
+		CFRelease(rectValue);
 	} else if(strcmp(objcType,@encode(NSRange)) == 0) {
 		NSRange range = value.rangeValue;
 		AXValueRef rangeValue = AXValueCreate(kAXValueCGSizeType,&range);
 		AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,rangeValue);
+		CFRelease(rangeValue);
 	}
 }
 
