@@ -136,14 +136,15 @@ static OSStatus carbonEventHotKeyHandler(EventHandlerCallRef nextHandler, EventR
 - (void) addCarbonKeyEvent:(CarbonKeyEvent *) keyEvent; {
 	NSNumber * key = [self keyForKeyCode:keyEvent.keyCode modifierFlags:keyEvent.modifierFlags];
 	if(self.keyEvents[key]) {
-		RemoveEventHandler(keyEvent->_eventHandlerRef);
-		UnregisterEventHotKey(keyEvent->_hotKeyRef);
-		[self.keyEvents removeObjectForKey:key];
-		[self.keyEvents removeObjectForKey:[self hotKeyIdFromKeyEvent:keyEvent]];
+		[self removeCarbonKeyEvent:self.keyEvents[key]];
 	}
 	
 	NSUInteger keyCode = keyEvent.keyCode;
 	NSUInteger modifiers = [CarbonEventManager cocoaToCarbonModifierFlags:keyEvent.modifierFlags];
+	
+	if(__eventId == UINT32_MAX) {
+		__eventId = 0;
+	}
 	
 	keyEvent->_hotKeyId.id = (UInt32)__eventId++;
 	keyEvent->_eventSpec.eventClass = kEventClassKeyboard;
