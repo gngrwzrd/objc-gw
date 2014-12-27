@@ -14,19 +14,19 @@
 }
 
 + (void) glass; {
-	[self playSoundNamed:@"glass"];
+	[self playSoundNamed:@"Glass"];
 }
 
 + (void) glassAtVolume:(CGFloat) volume; {
-	[self playSoundNamed:@"glass" atVolume:volume];
+	[self playSoundNamed:@"Glass" atVolume:volume];
 }
 
 + (void) pop; {
-	[self playSoundNamed:@"pop"];
+	[self playSoundNamed:@"Pop"];
 }
 
 + (void) popAtVolume:(CGFloat) volume; {
-	[self playSoundNamed:@"pop" atVolume:volume];
+	[self playSoundNamed:@"Pop" atVolume:volume];
 }
 
 @end
