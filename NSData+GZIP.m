@@ -16,7 +16,13 @@ static const NSUInteger ChunkSize = 16384;
 		stream.next_in = (Bytef *)[self bytes];
 		stream.total_out = 0;
 		stream.avail_out = 0;
-		int compression = (level < 0) ? Z_DEFAULT_COMPRESSION : (int)level;
+		int compression = level;
+		if(compression < 0) {
+			compression = Z_DEFAULT_COMPRESSION;
+		}
+		if(compression > 9) {
+			compression = 9;
+		}
 		if(deflateInit2(&stream,compression,Z_DEFLATED,31,8,Z_DEFAULT_STRATEGY) == Z_OK) {
 			NSMutableData * data = [NSMutableData dataWithLength:ChunkSize];
 			while(stream.avail_out == 0) {
