@@ -11,6 +11,7 @@
 - (NSData *) PNGRepresentationWithOptions:(NSDictionary *) options; {
 	CGImageRef cgimage = [self CGImageForProposedRect:nil context:nil hints:nil];
 	NSBitmapImageRep * rep = [[NSBitmapImageRep alloc] initWithCGImage:cgimage];
+	[rep setSize:self.size];
 	NSData * png = [rep representationUsingType:NSPNGFileType properties:options];
 	return png;
 }
@@ -18,6 +19,7 @@
 - (NSData *) JPEGRepresentationWithOptions:(NSDictionary *) options; {
 	CGImageRef cgimage = [self CGImageForProposedRect:nil context:nil hints:nil];
 	NSBitmapImageRep * rep = [[NSBitmapImageRep alloc] initWithCGImage:cgimage];
+	[rep setSize:self.size];
 	NSData * jpg = [rep representationUsingType:NSJPEGFileType properties:options];
 	return jpg;
 }
