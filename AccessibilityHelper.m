@@ -239,12 +239,12 @@ static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef
 		CFRelease(sizeValue);
 	} else if(strcmp(objcType,@encode(NSRect)) == 0) {
 		NSRect rect = value.rectValue;
-		AXValueRef rectValue = AXValueCreate(kAXValueCGSizeType,&rect);
+		AXValueRef rectValue = AXValueCreate(kAXValueCGRectType,&rect);
 		AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,rectValue);
 		CFRelease(rectValue);
 	} else if(strcmp(objcType,@encode(NSRange)) == 0) {
 		NSRange range = value.rangeValue;
-		AXValueRef rangeValue = AXValueCreate(kAXValueCGSizeType,&range);
+		AXValueRef rangeValue = AXValueCreate(kAXValueCFRangeType,&range);
 		AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,rangeValue);
 		CFRelease(rangeValue);
 	}
