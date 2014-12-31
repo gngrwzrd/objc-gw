@@ -6,7 +6,7 @@
 @property NSInteger tag;
 @property NSEventModifierFlags modifierFlags;
 @property NSUInteger keyCode;
-@property NSObject * target;
+@property (weak) NSObject * target;
 @property SEL action;
 + (instancetype) carbonEventWithKeyCode:(NSUInteger) keyCode modifiers:(NSEventModifierFlags) modifiers;
 - (void) invoke;
