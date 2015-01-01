@@ -39,4 +39,20 @@
 	return [fileManager fileExistsAtPath:targetPath];
 }
 
+- (BOOL) isFrontmostAppThisApp {
+	NSRunningApplication * app = [[NSWorkspace sharedWorkspace] frontmostApplication];
+	if([[app bundleIdentifier] isEqualToString:[NSBundle mainBundle].bundleIdentifier]) {
+		return TRUE;
+	}
+	return FALSE;
+}
+
+- (BOOL) isFrontmostAppThisBundle:(NSBundle *) bundle {
+	NSRunningApplication * app = [[NSWorkspace sharedWorkspace] frontmostApplication];
+	if([[app bundleIdentifier] isEqualToString:bundle.bundleIdentifier]) {
+		return TRUE;
+	}
+	return FALSE;
+}
+
 @end

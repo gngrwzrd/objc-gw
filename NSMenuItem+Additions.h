@@ -3,6 +3,7 @@
 
 @interface NSMenuItem (Additions)
 
++ (NSMenuItem *) separatorItemWithTag:(NSUInteger) tag;
 - (void) removeFromContainingMenu;
 
 @end
