@@ -8,6 +8,7 @@ extern Boolean AXIsProcessTrustedWithOptions(CFDictionaryRef options) __attribut
 @interface AccessibilityElement ()
 @property AXUIElementRef element;
 - (id) initWithAXUIElementRef:(AXUIElementRef) elementRef;
+- (pid_t) pid;
 @end
 
 #pragma mark AccessibilityHelper
@@ -115,6 +116,11 @@ extern Boolean AXIsProcessTrustedWithOptions(CFDictionaryRef options) __attribut
 
 #pragma mark AccessibilityObserver Implementation
 
+static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef notification, void * userInfo) {
+	AccessibilityObserver * axobserver = (__bridge AccessibilityObserver *)userInfo;
+	axobserver.callback(axobserver,axobserver.element,(__bridge NSString *)notification);
+}
+
 @implementation AccessibilityObserver
 
 + (instancetype) observerForNotification:(NSString *) notification withCallback:(AccessibilityNotificationCallback) callback; {
@@ -124,19 +130,29 @@ extern Boolean AXIsProcessTrustedWithOptions(CFDictionaryRef options) __attribut
 	return observer;
 }
 
+- (void) installObserver {
+	AXObserverRef ref;
+	AXObserverCreate([self.element pid],AccessibilityObserverCallback,&ref);
+	CFRunLoopAddSource([[NSRunLoop mainRunLoop] getCFRunLoop],AXObserverGetRunLoopSource(ref),(__bridge CFStringRef)NSDefaultRunLoopMode);
+	self.observer = ref;
+	AXObserverAddNotification(ref,(__bridge AXUIElementRef)(self.element),(__bridge CFStringRef)self.notification,(__bridge void *)self);
+}
+
+- (void) uninstallObserver {
+	if(self.observer) {
+		CFRunLoopRemoveSource([[NSRunLoop mainRunLoop] getCFRunLoop],AXObserverGetRunLoopSource(self.observer),(CFStringRef)NSDefaultRunLoopMode);
+		AXObserverRemoveNotification(self.observer,self.element.element,(__bridge CFStringRef)self.notification);
+		CFRelease(self.observer);
+		self.observer = nil;
+	}
+}
+
 - (void) dealloc {
-	CFRunLoopRemoveSource([[NSRunLoop mainRunLoop] getCFRunLoop],AXObserverGetRunLoopSource(self.observer),(CFStringRef)NSDefaultRunLoopMode);
-	AXObserverRemoveNotification(self.observer,self.element.element,(__bridge CFStringRef)self.notification);
-	CFRelease(self.observer);
+	[self uninstallObserver];
 	self.element = nil;
 }
 
 @end
-
-static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef notification, void * userInfo) {
-	AccessibilityObserver * axobserver = (__bridge AccessibilityObserver *)userInfo;
-	axobserver.callback(axobserver,axobserver.element,(__bridge NSString *)notification);
-}
 
 #pragma mark AccessibilityElement Implementation
 
@@ -254,20 +270,35 @@ static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef
 	AXUIElementSetAttributeValue(self.element,(__bridge CFStringRef)attribute,(__bridge CFTypeRef)value);
 }
 
+- (BOOL) isAttributeSettable:(NSString *) attribute; {
+	Boolean val = FALSE;
+	if(AXUIElementIsAttributeSettable(self.element,(__bridge CFStringRef)attribute,&val) != kAXErrorSuccess) {
+		return FALSE;
+	}
+	return val;
+}
+
+- (BOOL) areAttributesSettable:(NSArray *) attributes {
+	for(NSString * attr in attributes) {
+		if(![self isAttributeSettable:attr]) {
+			return FALSE;
+		}
+	}
+	return TRUE;
+}
+
 - (void) addObserver:(AccessibilityObserver *) observer; {
-	AXObserverRef ref;
-	AXObserverCreate([self pid],AccessibilityObserverCallback,&ref);
-	CFRunLoopAddSource([[NSRunLoop mainRunLoop] getCFRunLoop],AXObserverGetRunLoopSource(ref),(__bridge CFStringRef)NSDefaultRunLoopMode);
-	observer.observer = ref;
-	observer.element = self;
-	AXObserverAddNotification(ref,self.element,(__bridge CFStringRef)observer.notification,(__bridge void *)observer);
+	if(observer.element) {
+		[observer uninstallObserver];
+	}
 	[self.observers addObject:observer];
+	observer.element = self;
+	[observer installObserver];
 }
 
 - (void) removeObserver:(AccessibilityObserver *) observer; {
+	[observer uninstallObserver];
 	[self.observers removeObject:observer];
-	CFRunLoopRemoveSource([[NSRunLoop mainRunLoop] getCFRunLoop],AXObserverGetRunLoopSource(observer.observer),(CFStringRef)NSDefaultRunLoopMode);
-	AXObserverRemoveNotification(observer.observer,self.element,(__bridge CFStringRef)observer.notification);
 }
 
 - (void) removeAllObservers {
