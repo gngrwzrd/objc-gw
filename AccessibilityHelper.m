@@ -135,7 +135,7 @@ static void AccessibilityObserverCallback(AXObserverRef observer, AXUIElementRef
 	AXObserverCreate([self.element pid],AccessibilityObserverCallback,&ref);
 	CFRunLoopAddSource([[NSRunLoop mainRunLoop] getCFRunLoop],AXObserverGetRunLoopSource(ref),(__bridge CFStringRef)NSDefaultRunLoopMode);
 	self.observer = ref;
-	AXObserverAddNotification(ref,(__bridge AXUIElementRef)(self.element),(__bridge CFStringRef)self.notification,(__bridge void *)self);
+	AXObserverAddNotification(ref,self.element.element,(__bridge CFStringRef)self.notification,(__bridge void *)self);
 }
 
 - (void) uninstallObserver {
