@@ -1,7 +1,7 @@
 
-#import "GWCursorButton.h"
+#import "CursorButton.h"
 
-@implementation GWCursorButton
+@implementation CursorButton
 
 - (void) resetCursorRects {
 	[super resetCursorRects];
@@ -9,6 +9,11 @@
 		[self removeCursorRect:self.cursorRect cursor:self.cursor];
 	}
 	[self addCursorRect:self.cursorRect cursor:self.cursor];
+}
+
+- (void) setCursor:(NSCursor *) cursor cursorRect:(NSRect) cursorRect; {
+	self.cursor = cursor;
+	self.cursorRect = cursorRect;
 }
 
 @end

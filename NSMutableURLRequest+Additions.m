@@ -1,5 +1,5 @@
 
-#import "NSMutableURLRequest+GWAdditions.h"
+#import "NSMutableURLRequest+Additions.h"
 #import <CommonCrypto/CommonCrypto.h>
 
 NSString * NSURL_hmacSHA256(NSString *key, NSString *data) {
@@ -7,14 +7,14 @@ NSString * NSURL_hmacSHA256(NSString *key, NSString *data) {
 	const char *cData = [data cStringUsingEncoding:NSASCIIStringEncoding];
 	unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
 	CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
-	NSMutableString *result = [NSMutableString string];
+	NSMutableString * result = [NSMutableString string];
 	for (int i = 0; i < sizeof cHMAC; i++) {
 		[result appendFormat:@"%02hhx", cHMAC[i]];
 	}
     return result;
 }
 
-@implementation NSMutableURLRequest (GWAdditions)
+@implementation NSMutableURLRequest (Additions)
 
 - (NSString *) hmacSha256SignatureForHeaders:(NSArray *) array withSecret:(NSString *) secret; {
 	NSMutableString * input = [NSMutableString string];

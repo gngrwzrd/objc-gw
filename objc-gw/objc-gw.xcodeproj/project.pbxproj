@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0713A3D91A5E28FA00FCCE88 /* CursorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0713A3D81A5E28FA00FCCE88 /* CursorButton.m */; };
+		0713A3DC1A5E296F00FCCE88 /* NSBezierPath+BezierPathQuartzUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0713A3DB1A5E296F00FCCE88 /* NSBezierPath+BezierPathQuartzUtilities.m */; };
+		0713A3E21A5E2EFD00FCCE88 /* NSMutableURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0713A3E11A5E2EFD00FCCE88 /* NSMutableURLRequest+Additions.m */; };
 		07F792411A2C41A700ACE12C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792401A2C41A700ACE12C /* main.m */; };
 		07F792491A2C41C200ACE12C /* AccessibilityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F792481A2C41C200ACE12C /* AccessibilityHelper.m */; };
 		07F7924C1A2C41DF00ACE12C /* CarbonEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F7924B1A2C41DF00ACE12C /* CarbonEventManager.m */; };
@@ -54,8 +57,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0713A3D71A5E28FA00FCCE88 /* CursorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CursorButton.h; path = ../../CursorButton.h; sourceTree = "<group>"; };
+		0713A3D81A5E28FA00FCCE88 /* CursorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CursorButton.m; path = ../../CursorButton.m; sourceTree = "<group>"; };
+		0713A3DA1A5E296F00FCCE88 /* NSBezierPath+BezierPathQuartzUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSBezierPath+BezierPathQuartzUtilities.h"; path = "../../NSBezierPath+BezierPathQuartzUtilities.h"; sourceTree = "<group>"; };
+		0713A3DB1A5E296F00FCCE88 /* NSBezierPath+BezierPathQuartzUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSBezierPath+BezierPathQuartzUtilities.m"; path = "../../NSBezierPath+BezierPathQuartzUtilities.m"; sourceTree = "<group>"; };
+		0713A3E01A5E2EFD00FCCE88 /* NSMutableURLRequest+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableURLRequest+Additions.h"; path = "../../NSMutableURLRequest+Additions.h"; sourceTree = "<group>"; };
+		0713A3E11A5E2EFD00FCCE88 /* NSMutableURLRequest+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableURLRequest+Additions.m"; path = "../../NSMutableURLRequest+Additions.m"; sourceTree = "<group>"; };
 		07F7923D1A2C41A700ACE12C /* objc-gw */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "objc-gw"; sourceTree = BUILT_PRODUCTS_DIR; };
-		07F792401A2C41A700ACE12C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07F792401A2C41A700ACE12C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "objc-gw/main.m"; sourceTree = "<group>"; };
 		07F792471A2C41C200ACE12C /* AccessibilityHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessibilityHelper.h; path = ../../AccessibilityHelper.h; sourceTree = "<group>"; };
 		07F792481A2C41C200ACE12C /* AccessibilityHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessibilityHelper.m; path = ../../AccessibilityHelper.m; sourceTree = "<group>"; };
 		07F7924A1A2C41DF00ACE12C /* CarbonEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarbonEventManager.h; path = ../../CarbonEventManager.h; sourceTree = "<group>"; };
@@ -137,6 +146,7 @@
 		07F792341A2C41A700ACE12C = {
 			isa = PBXGroup;
 			children = (
+				07F792401A2C41A700ACE12C /* main.m */,
 				07F792511A2C41F900ACE12C /* Frameworks */,
 				07F7923F1A2C41A700ACE12C /* objc-gw */,
 				07F7923E1A2C41A700ACE12C /* Products */,
@@ -168,13 +178,16 @@
 				07F792941A2CBD5700ACE12C /* CliProxyConnector.m */,
 				07F792A31A2CC19600ACE12C /* CrashFinder.h */,
 				07F792A41A2CC19600ACE12C /* CrashFinder.m */,
+				0713A3D71A5E28FA00FCCE88 /* CursorButton.h */,
+				0713A3D81A5E28FA00FCCE88 /* CursorButton.m */,
 				07F7925E1A2C456F00ACE12C /* DiskCache.h */,
 				07F7925F1A2C456F00ACE12C /* DiskCache.m */,
 				07F7929D1A2CC02A00ACE12C /* GDB.c */,
 				07F7929E1A2CC02A00ACE12C /* GDB.h */,
 				07F792581A2C443500ACE12C /* KqueueWatcher.h */,
 				07F792591A2C443500ACE12C /* KqueueWatcher.m */,
-				07F792401A2C41A700ACE12C /* main.m */,
+				0713A3DA1A5E296F00FCCE88 /* NSBezierPath+BezierPathQuartzUtilities.h */,
+				0713A3DB1A5E296F00FCCE88 /* NSBezierPath+BezierPathQuartzUtilities.m */,
 				07F792D71A2D01B600ACE12C /* NSCodingKeys.h */,
 				07F7927F1A2C48F000ACE12C /* NSFileManager+Additions.h */,
 				07F792801A2C48F000ACE12C /* NSFileManager+Additions.m */,
@@ -185,6 +198,8 @@
 				07F792A91A2CC6BD00ACE12C /* NSLog+Geom.h */,
 				07F792611A2C460100ACE12C /* NSMenu+Additions.h */,
 				07F792621A2C460100ACE12C /* NSMenu+Additions.m */,
+				0713A3E01A5E2EFD00FCCE88 /* NSMutableURLRequest+Additions.h */,
+				0713A3E11A5E2EFD00FCCE88 /* NSMutableURLRequest+Additions.m */,
 				07F7926D1A2C475500ACE12C /* NSObject+Additions.h */,
 				07F7926E1A2C475500ACE12C /* NSObject+Additions.m */,
 				07F792701A2C482100ACE12C /* NSScreen+Additions.h */,
@@ -288,6 +303,7 @@
 				07F792811A2C48F000ACE12C /* NSFileManager+Additions.m in Sources */,
 				07F792961A2CBD5700ACE12C /* CliProxyConnector.m in Sources */,
 				07F792661A2C464700ACE12C /* NSWorkspace+Additions.m in Sources */,
+				0713A3E21A5E2EFD00FCCE88 /* NSMutableURLRequest+Additions.m in Sources */,
 				07F792751A2C484600ACE12C /* NSString+Additions.m in Sources */,
 				07F792951A2CBD5700ACE12C /* CliProxy.m in Sources */,
 				07F7928A1A2C499E00ACE12C /* PipedTaskRunner.m in Sources */,
@@ -299,9 +315,11 @@
 				07F792491A2C41C200ACE12C /* AccessibilityHelper.m in Sources */,
 				07F792631A2C460100ACE12C /* NSMenu+Additions.m in Sources */,
 				07F792A21A2CC09300ACE12C /* ULimit.m in Sources */,
+				0713A3DC1A5E296F00FCCE88 /* NSBezierPath+BezierPathQuartzUtilities.m in Sources */,
 				07F792601A2C456F00ACE12C /* DiskCache.m in Sources */,
 				07F792D61A2D019F00ACE12C /* NSKeyedArchiver+Additions.m in Sources */,
 				07F7929F1A2CC02A00ACE12C /* GDB.c in Sources */,
+				0713A3D91A5E28FA00FCCE88 /* CursorButton.m in Sources */,
 				07F792B01A2CEAE000ACE12C /* ASLLogManager.m in Sources */,
 				07F7926C1A2C46A100ACE12C /* QuartzEventTap.m in Sources */,
 				07F792B31A2CFA0300ACE12C /* NSURL+Additions.m in Sources */,

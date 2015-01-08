@@ -64,7 +64,6 @@ NSString * relativize(NSURL * to, NSURL * from) {
 			[parents addObject:@".."];
 			[pieces insertObject:toPiece atIndex:0];
 		}
-		
 	}
 	
 	[relPath appendString:[parents componentsJoinedByString:@"/"]];
@@ -72,12 +71,25 @@ NSString * relativize(NSURL * to, NSURL * from) {
 	else [relPath appendString:@"./"];
 	[relPath appendString:[pieces componentsJoinedByString:@"/"]];
 	
-	NSLog(@"%@",relPath);
+	//NSLog(@"%@",relPath);
 	
 	return relPath;
 }
 
 @implementation NSURL (Additions)
+
++ (NSURL *) secureHTTPURLWithString:(NSString *) string {
+	NSURL * url = [NSURL URLWithString:string];
+	if([url.scheme isEqualToString:@"http"]) {
+		NSMutableString * newURL = [[NSMutableString alloc] init];
+		[newURL appendString:@"https://"];
+		[newURL appendString:url.host];
+		[newURL appendString:url.path];
+		[newURL appendString:@"/"];
+		url = [NSURL URLWithString:newURL];
+	}
+	return url;
+}
 
 + (NSString *) relativizeFileSystemPathTo:(NSURL *) to fromPath:(NSURL *) from; {
 	return relativize(to,from);
