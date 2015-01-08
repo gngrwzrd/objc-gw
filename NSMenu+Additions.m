@@ -16,7 +16,7 @@
 - (void) setEnabled:(BOOL) enabled forItemsWithTagsInRange:(NSRange) range; {
 	NSArray * items = self.itemArray;
 	for(NSMenuItem * item in items) {
-		if(item.tag >= range.location && item.tag < range.location+range.length) {
+		if(NSLocationInRange(item.tag,range)) {
 			[item setEnabled:enabled];
 		}
 	}
@@ -25,7 +25,7 @@
 - (void) removeItemsWithTagsInRange:(NSRange) range; {
 	NSArray * items = self.itemArray;
 	for(NSMenuItem * item in items) {
-		if(item.tag >= range.location && item.tag < range.location+range.length) {
+		if(NSLocationInRange(item.tag,range)) {
 			[self removeItem:item];
 		}
 	}
