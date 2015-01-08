@@ -65,11 +65,8 @@
 }
 
 - (void) updateExecutablePath; {
-	NSFileManager * fileManager = [NSFileManager defaultManager];
 	NSURL * plistPath = [self installedAgentPath];
-	BOOL isInstalled = FALSE;
 	if(plistPath) {
-		isInstalled = [fileManager fileExistsAtPath:plistPath.path];
 		NSDictionary * plist = [NSDictionary dictionaryWithContentsOfURL:plistPath];
 		if(plist) {
 			NSString * program = plist[@"Program"];
