@@ -250,4 +250,8 @@ static OSStatus carbonEventHotKeyHandler(EventHandlerCallRef nextHandler, EventR
 	self.action = action;
 }
 
+- (void) dealloc {
+	//NSLog(@"DEALLOC: CarbonKeyEvent");
+}
+
 @end

@@ -14,6 +14,23 @@
 	}
 }
 
+- (BOOL) isFrontmostAppThisApp {
+	NSRunningApplication * app = [[NSWorkspace sharedWorkspace] frontmostApplication];
+	if([[app bundleIdentifier] isEqualToString:[NSBundle mainBundle].bundleIdentifier]) {
+		return TRUE;
+	}
+	return FALSE;
+}
+
+- (BOOL) isFrontmostAppThisBundle:(NSBundle *) bundle {
+	NSRunningApplication * app = [[NSWorkspace sharedWorkspace] frontmostApplication];
+	if([[app bundleIdentifier] isEqualToString:bundle.bundleIdentifier]) {
+		return TRUE;
+	}
+	return FALSE;
+}
+
+//deprecated. Use LaunchAgentStartupItem Class instead.
 - (void) uninstallStartupLaunchdItem:(NSURL *) plistURL; {
 	NSFileManager * fm = [NSFileManager defaultManager];
 	NSString * fileName = [plistURL lastPathComponent];
@@ -21,6 +38,7 @@
 	[fm removeItemAtPath:file error:NULL];
 }
 
+//deprecated. Use LaunchAgentStartupItem Class instead.
 - (void) installStartupLaunchdItem:(NSURL *) plistURL; {
 	NSFileManager * fileManager = [NSFileManager defaultManager];
 	NSMutableDictionary * attrs = [NSMutableDictionary dictionary];
@@ -32,6 +50,7 @@
 	[fileManager copyItemAtPath:plistURL.path toPath:destPath error:nil];
 }
 
+//deprecated. Use LaunchAgentStartupItem Class instead.
 - (BOOL) isStartupItemInstalled:(NSURL *) plistURL; {
 	NSFileManager * fileManager = [NSFileManager defaultManager];
 	NSString * fileName = [plistURL lastPathComponent];
