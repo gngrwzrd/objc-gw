@@ -45,7 +45,7 @@
 	NSMutableDictionary * plist = [NSMutableDictionary dictionary];
 	plist[@"Label"] = self.label;
 	plist[@"LimitLoadToSessionType"] = @"Aqua";
-	plist[@"RunAtLoad"] = @(TRUE);
+	plist[@"RunAtLoad"] = [NSNumber numberWithBool:TRUE];
 	plist[@"Program"] = self.executablePath;
 	if(self.programArguments) {
 		plist[@"ProgramArguments"] = self.programArguments;
@@ -64,7 +64,7 @@
 	}
 }
 
-- (BOOL) isInstalled {
+- (void) updateExecutablePath; {
 	NSFileManager * fileManager = [NSFileManager defaultManager];
 	NSURL * plistPath = [self installedAgentPath];
 	BOOL isInstalled = FALSE;
@@ -79,7 +79,15 @@
 			}
 		}
 	}
-	return isInstalled;
+}
+
+- (BOOL) isInstalled {
+	NSFileManager * fileManager = [NSFileManager defaultManager];
+	NSURL * plistPath = [self installedAgentPath];
+	if(!plistPath) {
+		return NO;
+	}
+	return [fileManager fileExistsAtPath:plistPath.path];
 }
 
 @end

@@ -11,4 +11,5 @@
 - (id) initWithExecutablePath:(NSString *) executablePath fileName:(NSString *) fileName label:(NSString *) label;
 - (void) install;
 - (void) uninstall;
+- (void) updateExecutablePath;
 @end
