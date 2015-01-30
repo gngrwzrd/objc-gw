@@ -8,29 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		07B7E2FC1A7B5C1400EE202C /* objc-gw-ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B7E2FB1A7B5C1400EE202C /* objc-gw-ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07B7E3021A7B5C1400EE202C /* objc_gw_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B7E2F61A7B5C1400EE202C /* objc_gw_ios.framework */; };
-		07B7E3091A7B5C1400EE202C /* objc_gw_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B7E3081A7B5C1400EE202C /* objc_gw_iosTests.m */; };
 		07B7E3141A7B5C8300EE202C /* UIViewControllerStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B7E3121A7B5C8300EE202C /* UIViewControllerStack.h */; };
 		07B7E3151A7B5C8300EE202C /* UIViewControllerStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B7E3131A7B5C8300EE202C /* UIViewControllerStack.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		07B7E3031A7B5C1400EE202C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07B7E2ED1A7B5C1400EE202C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07B7E2F51A7B5C1400EE202C;
-			remoteInfo = "objc-gw-ios";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		07B7E2F61A7B5C1400EE202C /* objc_gw_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = objc_gw_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B7E2FA1A7B5C1400EE202C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07B7E2FB1A7B5C1400EE202C /* objc-gw-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "objc-gw-ios.h"; sourceTree = "<group>"; };
-		07B7E3011A7B5C1400EE202C /* objc-gw-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "objc-gw-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		07B7E3071A7B5C1400EE202C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07B7E3081A7B5C1400EE202C /* objc_gw_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objc_gw_iosTests.m; sourceTree = "<group>"; };
 		07B7E3121A7B5C8300EE202C /* UIViewControllerStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIViewControllerStack.h; path = ../../UIViewControllerStack.h; sourceTree = "<group>"; };
 		07B7E3131A7B5C8300EE202C /* UIViewControllerStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIViewControllerStack.m; path = ../../UIViewControllerStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,14 +28,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		07B7E2FE1A7B5C1400EE202C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07B7E3021A7B5C1400EE202C /* objc_gw_ios.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -58,7 +35,6 @@
 			isa = PBXGroup;
 			children = (
 				07B7E2F81A7B5C1400EE202C /* objc-gw-ios */,
-				07B7E3051A7B5C1400EE202C /* objc-gw-iosTests */,
 				07B7E2F71A7B5C1400EE202C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				07B7E2F61A7B5C1400EE202C /* objc_gw_ios.framework */,
-				07B7E3011A7B5C1400EE202C /* objc-gw-iosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,23 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				07B7E2FA1A7B5C1400EE202C /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		07B7E3051A7B5C1400EE202C /* objc-gw-iosTests */ = {
-			isa = PBXGroup;
-			children = (
-				07B7E3081A7B5C1400EE202C /* objc_gw_iosTests.m */,
-				07B7E3061A7B5C1400EE202C /* Supporting Files */,
-			);
-			path = "objc-gw-iosTests";
-			sourceTree = "<group>";
-		};
-		07B7E3061A7B5C1400EE202C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				07B7E3071A7B5C1400EE202C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -141,24 +99,6 @@
 			productReference = 07B7E2F61A7B5C1400EE202C /* objc_gw_ios.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		07B7E3001A7B5C1400EE202C /* objc-gw-iosTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 07B7E30F1A7B5C1400EE202C /* Build configuration list for PBXNativeTarget "objc-gw-iosTests" */;
-			buildPhases = (
-				07B7E2FD1A7B5C1400EE202C /* Sources */,
-				07B7E2FE1A7B5C1400EE202C /* Frameworks */,
-				07B7E2FF1A7B5C1400EE202C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				07B7E3041A7B5C1400EE202C /* PBXTargetDependency */,
-			);
-			name = "objc-gw-iosTests";
-			productName = "objc-gw-iosTests";
-			productReference = 07B7E3011A7B5C1400EE202C /* objc-gw-iosTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -169,9 +109,6 @@
 				ORGANIZATIONNAME = gngrwzrd;
 				TargetAttributes = {
 					07B7E2F51A7B5C1400EE202C = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					07B7E3001A7B5C1400EE202C = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
@@ -189,20 +126,12 @@
 			projectRoot = "";
 			targets = (
 				07B7E2F51A7B5C1400EE202C /* objc-gw-ios */,
-				07B7E3001A7B5C1400EE202C /* objc-gw-iosTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		07B7E2F41A7B5C1400EE202C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07B7E2FF1A7B5C1400EE202C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -220,23 +149,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		07B7E2FD1A7B5C1400EE202C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07B7E3091A7B5C1400EE202C /* objc_gw_iosTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		07B7E3041A7B5C1400EE202C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 07B7E2F51A7B5C1400EE202C /* objc-gw-ios */;
-			targetProxy = 07B7E3031A7B5C1400EE202C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		07B7E30A1A7B5C1400EE202C /* Debug */ = {
@@ -353,36 +266,6 @@
 			};
 			name = Release;
 		};
-		07B7E3101A7B5C1400EE202C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "objc-gw-iosTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		07B7E3111A7B5C1400EE202C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "objc-gw-iosTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -402,14 +285,7 @@
 				07B7E30E1A7B5C1400EE202C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		07B7E30F1A7B5C1400EE202C /* Build configuration list for PBXNativeTarget "objc-gw-iosTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				07B7E3101A7B5C1400EE202C /* Debug */,
-				07B7E3111A7B5C1400EE202C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

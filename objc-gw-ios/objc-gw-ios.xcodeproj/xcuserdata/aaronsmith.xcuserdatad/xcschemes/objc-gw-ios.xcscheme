@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07B7E2F51A7B5C1400EE202C"
-               BuildableName = "objc-gw-ios.framework"
+               BuildableName = "objc_gw_ios.framework"
                BlueprintName = "objc-gw-ios"
                ReferencedContainer = "container:objc-gw-ios.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07B7E2F51A7B5C1400EE202C"
-            BuildableName = "objc-gw-ios.framework"
+            BuildableName = "objc_gw_ios.framework"
             BlueprintName = "objc-gw-ios"
             ReferencedContainer = "container:objc-gw-ios.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07B7E2F51A7B5C1400EE202C"
-            BuildableName = "objc-gw-ios.framework"
+            BuildableName = "objc_gw_ios.framework"
             BlueprintName = "objc-gw-ios"
             ReferencedContainer = "container:objc-gw-ios.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07B7E2F51A7B5C1400EE202C"
-            BuildableName = "objc-gw-ios.framework"
+            BuildableName = "objc_gw_ios.framework"
             BlueprintName = "objc-gw-ios"
             ReferencedContainer = "container:objc-gw-ios.xcodeproj">
          </BuildableReference>
