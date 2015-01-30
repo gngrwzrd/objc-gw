@@ -180,7 +180,7 @@
 	[self.viewControllers addObjectsFromArray:viewControllers];
 }
 
-- (void) insertViewControllerWithoutDisplaying:(UIViewController *) viewController atIndex:(NSInteger) index; {
+- (void) insertViewController:(UIViewController *) viewController atIndex:(NSInteger) index; {
 	[self.viewControllers insertObject:viewController atIndex:index];
 }
 

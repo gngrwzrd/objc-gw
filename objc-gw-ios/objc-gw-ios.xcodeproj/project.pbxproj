@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07B7E2FC1A7B5C1400EE202C /* objc-gw-ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B7E2FB1A7B5C1400EE202C /* objc-gw-ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07B7E3141A7B5C8300EE202C /* UIViewControllerStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B7E3121A7B5C8300EE202C /* UIViewControllerStack.h */; };
+		07B7E3141A7B5C8300EE202C /* UIViewControllerStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B7E3121A7B5C8300EE202C /* UIViewControllerStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07B7E3151A7B5C8300EE202C /* UIViewControllerStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B7E3131A7B5C8300EE202C /* UIViewControllerStack.m */; };
 /* End PBXBuildFile section */
 

@@ -23,15 +23,22 @@ IB_DESIGNABLE
 @property IBInspectable CGFloat animationDuration;
 @property IBInspectable BOOL alwaysResizePushedViews;
 
+//methods for pushing/popping and altering what's displayed.
 - (void) pushViewController:(UIViewController *) viewController animated:(BOOL) animated;
-- (void) pushViewControllersWithoutDisplaying:(NSArray *) viewControllers;
-- (void) insertViewControllerWithoutDisplaying:(UIViewController *) viewController atIndex:(NSInteger) index;
 - (void) popViewControllerAnimated:(BOOL) animated;
 - (void) popToRootViewControllerAnimated:(BOOL) animated;
 - (void) eraseStackAndPushViewController:(UIViewController *) viewController animated:(BOOL) animated;
 - (void) replaceCurrentViewControllerWithViewController:(UIViewController *) viewController animated:(BOOL) animated;
+
+//util methods for updating what's in the stack without effecting what's displayed.
+- (void) pushViewControllersWithoutDisplaying:(NSArray *) viewControllers;
+- (void) insertViewController:(UIViewController *) viewController atIndex:(NSInteger) index;
 - (void) replaceViewController:(UIViewController *) viewController withViewController:(UIViewController *) newViewController;
+
+//completely erase stack and remove all subviews.
 - (void) eraseStack;
+
+//other utils
 - (BOOL) canPopViewController;
 - (BOOL) hasViewController:(UIViewController *) viewController;
 - (BOOL) hasViewControllerClass:(Class) cls;
