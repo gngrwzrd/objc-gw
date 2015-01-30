@@ -31,7 +31,7 @@ IB_DESIGNABLE
 - (void) replaceCurrentViewControllerWithViewController:(UIViewController *) viewController animated:(BOOL) animated;
 
 //util methods for updating what's in the stack without effecting what's displayed.
-- (void) pushViewControllersWithoutDisplaying:(NSArray *) viewControllers;
+- (void) pushViewControllers:(NSArray *) viewControllers;
 - (void) insertViewController:(UIViewController *) viewController atIndex:(NSInteger) index;
 - (void) replaceViewController:(UIViewController *) viewController withViewController:(UIViewController *) newViewController;
 

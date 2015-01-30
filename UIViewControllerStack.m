@@ -176,7 +176,7 @@
 	[self.viewControllers addObject:viewController];
 }
 
-- (void) pushViewControllersWithoutDisplaying:(NSArray *) viewControllers; {
+- (void) pushViewControllers:(NSArray *) viewControllers; {
 	[self.viewControllers addObjectsFromArray:viewControllers];
 }
 
