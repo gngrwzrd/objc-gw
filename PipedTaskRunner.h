@@ -14,6 +14,7 @@
 @interface PipedTaskRunner : NSObject {
 	BOOL _terminated;
 }
+
 @property (assign) NSObject <PipedTaskRunnerDelegate> * delegate;
 @property BOOL collectDataUntilTerminated;
 @property NSTask * task;
@@ -22,4 +23,5 @@
 @property NSPipe * standardError;
 @property NSMutableData * data;
 - (id) initWithStandardInput:(NSPipe *) pipe;
+
 @end
