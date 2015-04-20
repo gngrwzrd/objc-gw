@@ -92,6 +92,9 @@ static OSStatus carbonEventHotKeyHandler(EventHandlerCallRef nextHandler, EventR
 }
 
 - (void) restoreFromDefaults {
+	if(!self.writesToDefaults) {
+		return;
+	}
 	NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
 	NSData * keyEventsData = [defaults objectForKey:CarbonEventManagerKeyEventsDefaultsKey];
 	[self restoreKeyEventsFromData:keyEventsData];
@@ -206,6 +209,9 @@ static OSStatus carbonEventHotKeyHandler(EventHandlerCallRef nextHandler, EventR
 }
 
 - (void) dealloc {
+	if(__sharedManager == self) {
+		__sharedManager = nil;
+	}
 	self.writesToDefaults = FALSE;
 	[self removeAllEvents];
 }
