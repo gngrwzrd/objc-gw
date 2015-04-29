@@ -8,7 +8,7 @@
 
 @class KqueueWatcher;
 
-NSString * const KqueueWatcherDidChange;
+extern NSString * const KqueueWatcherDidChange;
 
 @protocol KqueueWatcherDelegate <NSObject>
 - (void) kqueueWatcherDidChange:(KqueueWatcher *) watcher;
