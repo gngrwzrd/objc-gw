@@ -48,15 +48,32 @@ NSString * const EditTextFieldEndEditing = @"EditTextFieldEndEditing";
 	[self stopEditingCommitChanges:FALSE clearFirstResponder:TRUE];
 }
 
+- (BOOL) isMouseLocationInTextRect:(NSPoint) mouseLocation convertPoint:(BOOL) convertPoint {
+	NSPoint realMouseLocation = mouseLocation;
+	if(convertPoint) {
+		realMouseLocation = [self convertPoint:mouseLocation fromView:nil];
+	}
+	NSString * string = self.stringValue;
+	NSDictionary * attributes = @{
+		NSFontAttributeName:self.font,
+	};
+	NSSize size = [string sizeWithAttributes:attributes];
+	NSRect rect = NSMakeRect(0, 0,size.width+3,size.height);
+	BOOL result = NSPointInRect(realMouseLocation,rect);
+	return result;
+}
+
 - (void) mouseDown:(NSEvent *) theEvent {
 	if(theEvent.clickCount == 2) {
 		[self stopTracking];
-		[self startEditing];
+		if([self isMouseLocationInTextRect:[theEvent locationInWindow] convertPoint:TRUE]) {
+			[self startEditing];
+		}
 	} else {
 		[super mouseDown:theEvent];
-		if(self.editAfterDelay) {
+		if(self.editAfterDelay && [self isMouseLocationInTextRect:[theEvent locationInWindow] convertPoint:TRUE]) {
 			[self startTracking];
-			self.editTimer = [NSTimer scheduledTimerWithTimeInterval:.8 target:self selector:@selector(startEditing) userInfo:nil repeats:FALSE];
+			self.editTimer = [NSTimer scheduledTimerWithTimeInterval:.3 target:self selector:@selector(startEditing) userInfo:nil repeats:FALSE];
 		}
 	}
 }
