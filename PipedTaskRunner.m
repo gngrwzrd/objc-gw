@@ -86,7 +86,9 @@
 
 - (void) dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[self.task terminate];
+	if(self.task.isRunning) {
+		[self.task terminate];
+	}
 	self.task = nil;
 	self.delegate = nil;
 	self.standardOutput = nil;
