@@ -5,6 +5,7 @@
 @property CGDirectDisplayID displayId;
 + (NSUInteger) numberOfDisplays;
 + (NSArray *) displays;
++ (NSArray *) screens;
 - (id) initWithCGDirectDisplayId:(CGDirectDisplayID) directDisplayId;
 - (id) initWithPoint:(NSPoint) point;
 - (id) initWithRect:(NSRect) rect;

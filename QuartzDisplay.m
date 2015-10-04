@@ -24,6 +24,18 @@
 	return quartzDisplays;
 }
 
++ (NSArray *) screens {
+	NSArray * screens = [NSScreen screens];
+	NSMutableArray * displays = [NSMutableArray array];
+	for(NSScreen * screen in screens) {
+		NSDictionary * info = screen.deviceDescription;
+		NSInteger num = [info[@"NSScreenNumber"] longValue];
+		QuartzDisplay * display = [[QuartzDisplay alloc] initWithCGDirectDisplayId:(CGDirectDisplayID)num];
+		[displays addObject:display];
+	}
+	return displays;
+}
+
 - (id) initWithCGDirectDisplayId:(CGDirectDisplayID) directDisplayId {
 	self = [super init];
 	self.displayId = directDisplayId;
