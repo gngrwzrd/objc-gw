@@ -31,28 +31,32 @@ NSString * relativize(NSURL * to, NSURL * from) {
 			toCount--;
 		}
 		
+		BOOL fromIsLast = TRUE;
 		while(![fromTrimmed isEqualToString:toTrimmed]) {
 			toPiece = [toTrimmed lastPathComponent];
 			toTrimmed = [toTrimmed stringByDeletingLastPathComponent];
 			fromPiece = [fromTrimmed lastPathComponent];
 			fromTrimmed = [fromTrimmed stringByDeletingLastPathComponent];
 			if(![toPiece isEqualToString:fromPiece]) {
-				if(![fromPiece isEqualToString:[fromPiece lastPathComponent]] || fromIsDir) {
+				if(!fromIsLast || fromIsDir) {
 					[parents addObject:@".."];
 				}
 				[pieces insertObject:toPiece atIndex:0];
 			}
+			fromIsLast = FALSE;
 		}
 		
 	} else {
 		NSUInteger fromCount = fromPieces.count;
 		
+		BOOL fromIsLast = TRUE;
 		while(fromCount > toPieces.count) {
 			fromPiece = [fromTrimmed lastPathComponent];
 			fromTrimmed = [fromTrimmed stringByDeletingLastPathComponent];
-			if(![fromPiece isEqualToString:[fromString lastPathComponent]] || fromIsDir) {
+			if(!fromIsLast || fromIsDir) {
 				[parents addObject:@".."];
 			}
+			fromIsLast = FALSE;
 			fromCount--;
 		}
 		
@@ -70,8 +74,6 @@ NSString * relativize(NSURL * to, NSURL * from) {
 	if(parents.count > 0) [relPath appendString:@"/"];
 	else [relPath appendString:@"./"];
 	[relPath appendString:[pieces componentsJoinedByString:@"/"]];
-	
-	//NSLog(@"%@",relPath);
 	
 	return relPath;
 }

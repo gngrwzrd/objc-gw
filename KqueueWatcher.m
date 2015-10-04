@@ -137,6 +137,7 @@ static void KqueueWatcherCallback(CFFileDescriptorRef kqRef, CFOptionFlags callB
 }
 
 - (void) dealloc {
+	NSLog(@"DEALLOC: KqueueWatcher");
 	if(self.isWatching) {
 		[self stop];
 	}
