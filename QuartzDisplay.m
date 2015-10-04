@@ -131,7 +131,7 @@
 
 - (NSString *) description {
 	NSSize pixels = [self pixelSize];
-	return [NSString stringWithFormat:@"<QuartzDisplay:%p> (displayId:%u, width:%fpx, height:%fpx)",self,self.displayId,pixels.width,pixels.height];
+	return [NSString stringWithFormat:@"<QuartzDisplay:%p> (displayId:%u, x:%f, y:%f, width:%fpx, height:%fpx)",self,self.displayId,self.bounds.origin.x,self.bounds.origin.y,pixels.width,pixels.height];
 }
 
 @end
