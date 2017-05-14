@@ -11,6 +11,7 @@
 + (instancetype) carbonEventWithKeyCode:(NSUInteger) keyCode modifiers:(NSEventModifierFlags) modifiers;
 - (void) invoke;
 - (void) setTarget:(NSObject *) target action:(SEL) action;
+- (NSString *) presentableKeyboardShortcut;
 @end
 
 typedef void (^CarbonEventManagerRestoreTargetAction)(CarbonKeyEvent * event);

@@ -1,5 +1,6 @@
 
 #import "CarbonEventManager.h"
+#import "GWShortcutRecorder.h"
 
 NSString * const CarbonEventManagerKeyEventsDefaultsKey = @"CarbonEventManagerKeyEvents";
 
@@ -254,6 +255,148 @@ static OSStatus carbonEventHotKeyHandler(EventHandlerCallRef nextHandler, EventR
 - (void) setTarget:(NSObject *) target action:(SEL) action; {
 	self.target = target;
 	self.action = action;
+}
+
+- (NSString *) presentableKeyboardShortcut {
+	NSMutableString * stringValue = [[NSMutableString alloc] init];
+	
+	if(self.modifierFlags & NSControlKeyMask) {
+		[stringValue appendFormat:@"%C",(unichar)kControlUnicode];
+	}
+	
+	if(self.modifierFlags & NSAlternateKeyMask) {
+		[stringValue appendFormat:@"%C",(unichar)kOptionUnicode];
+	}
+	
+	if(self.modifierFlags & NSShiftKeyMask) {
+		[stringValue appendFormat:@"%C",(unichar)kShiftUnicode];
+	}
+	
+	if(self.modifierFlags & NSCommandKeyMask) {
+		[stringValue appendFormat:@"%C",(unichar)kCommandUnicode];
+	}
+	
+	NSString * raw = @"";
+	
+	switch (self.keyCode) {
+		case kVK_F1:
+			[stringValue appendString:@"F1"];
+			break;
+		case kVK_F2:
+			[stringValue appendString:@"F2"];
+			break;
+		case kVK_F3:
+			[stringValue appendString:@"F3"];
+			break;
+		case kVK_F4:
+			[stringValue appendString:@"F4"];
+			break;
+		case kVK_F5:
+			[stringValue appendString:@"F5"];
+			break;
+		case kVK_F6:
+			[stringValue appendString:@"F6"];
+			break;
+		case kVK_F7:
+			[stringValue appendString:@"F7"];
+			break;
+		case kVK_F8:
+			[stringValue appendString:@"F8"];
+			break;
+		case kVK_F9:
+			[stringValue appendString:@"F9"];
+			break;
+		case kVK_F10:
+			[stringValue appendString:@"F10"];
+			break;
+		case kVK_F11:
+			[stringValue appendString:@"F11"];
+			break;
+		case kVK_F12:
+			[stringValue appendString:@"F12"];
+			break;
+		case kVK_F13:
+			[stringValue appendString:@"F13"];
+			break;
+		case kVK_F14:
+			[stringValue appendString:@"F14"];
+			break;
+		case kVK_F15:
+			[stringValue appendString:@"F15"];
+			break;
+		case kVK_F16:
+			[stringValue appendString:@"F16"];
+			break;
+		case kVK_F17:
+			[stringValue appendString:@"F17"];
+			break;
+		case kVK_F18:
+			[stringValue appendString:@"F18"];
+			break;
+		case kVK_F19:
+			[stringValue appendString:@"F19"];
+			break;
+		case kVK_F20:
+			[stringValue appendString:@"F20"];
+			break;
+		case kVK_ANSI_KeypadClear:
+			[stringValue appendFormat:@"%C",0x2327];
+			break;
+		case kVK_ANSI_KeypadEnter:
+			[stringValue appendFormat:@"%C",0x2305];
+			break;
+		case kVK_Delete:
+			[stringValue appendFormat:@"%C",0x232B];
+			break;
+		case kVK_DownArrow:
+			[stringValue appendFormat:@"%C",0x2193];
+			break;
+		case kVK_End:
+			[stringValue appendFormat:@"%C",0x2198];
+			break;
+		case kVK_Escape:
+			[stringValue appendFormat:@"%C",0x238B];
+			break;
+		case kVK_ForwardDelete:
+			[stringValue appendFormat:@"%C",0x2326];
+			break;
+		case kVK_Help:
+			[stringValue appendString:@"?⃝"];
+			break;
+		case kVK_Home:
+			[stringValue appendFormat:@"%C",0x2196];
+			break;
+		case kVK_LeftArrow:
+			[stringValue appendFormat:@"%C",0x2190];
+			break;
+		case kVK_PageDown:
+			[stringValue appendFormat:@"%C",0x2190];
+			break;
+		case kVK_PageUp:
+			[stringValue appendFormat:@"%C",0x21DE];
+			break;
+		case kVK_Space:
+			[stringValue appendFormat:@"%@",@"Space"];
+			break;
+		case kVK_Return:
+			[stringValue appendFormat:@"%C",0x21A9];
+			break;
+		case kVK_RightArrow:
+			[stringValue appendFormat:@"%C",0x2192];
+			break;
+		case kVK_Tab:
+			[stringValue appendFormat:@"%C",0x21E5];
+			break;
+		case kVK_UpArrow:
+			[stringValue appendFormat:@"%C",0x2191];
+			break;
+		default:
+			raw = [GWShortcutRecorder stringForRawKeyCode:self.keyCode];
+			[stringValue appendString:raw];
+			break;
+	}
+	
+	return stringValue;
 }
 
 - (void) dealloc {
